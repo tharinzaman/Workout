@@ -12,6 +12,11 @@
 		E15990C62B8B9E6C00D54091 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15990C42B8B9E6C00D54091 /* Item.swift */; };
 		E15990CA2B8BA00200D54091 /* WorkoutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15990C92B8BA00200D54091 /* WorkoutApp.swift */; };
 		E15990CE2B8BA05800D54091 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15990CC2B8BA05700D54091 /* WelcomeScreen.swift */; };
+		E16959752B8BBC42002B91AD /* BMI in Resources */ = {isa = PBXBuildFile; fileRef = E16959702B8BBC42002B91AD /* BMI */; };
+		E16959762B8BBC42002B91AD /* Networking in Resources */ = {isa = PBXBuildFile; fileRef = E16959712B8BBC42002B91AD /* Networking */; };
+		E16959772B8BBC42002B91AD /* Exercise in Resources */ = {isa = PBXBuildFile; fileRef = E16959722B8BBC42002B91AD /* Exercise */; };
+		E16959782B8BBC42002B91AD /* History in Resources */ = {isa = PBXBuildFile; fileRef = E16959732B8BBC42002B91AD /* History */; };
+		E16959792B8BBC42002B91AD /* Notifications in Resources */ = {isa = PBXBuildFile; fileRef = E16959742B8BBC42002B91AD /* Notifications */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,11 +45,11 @@
 		E15990C42B8B9E6C00D54091 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		E15990C92B8BA00200D54091 /* WorkoutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutApp.swift; sourceTree = "<group>"; };
 		E15990CC2B8BA05700D54091 /* WelcomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
-		E15991452B8BB4FE00D54091 /* BMI */ = {isa = PBXFileReference; lastKnownFileType = text; name = BMI; path = Workout/BMI; sourceTree = SOURCE_ROOT; };
-		E15991462B8BB59A00D54091 /* Exercise */ = {isa = PBXFileReference; lastKnownFileType = text; name = Exercise; path = Workout/Exercise; sourceTree = SOURCE_ROOT; };
-		E15991482B8BB61F00D54091 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = text; name = Networking; path = Workout/Networking; sourceTree = SOURCE_ROOT; };
-		E159914A2B8BB82800D54091 /* Notifications */ = {isa = PBXFileReference; lastKnownFileType = text; name = Notifications; path = Workout/Notifications; sourceTree = SOURCE_ROOT; };
-		E159914B2B8BB8D900D54091 /* History */ = {isa = PBXFileReference; lastKnownFileType = text; name = History; path = Workout/History; sourceTree = SOURCE_ROOT; };
+		E16959702B8BBC42002B91AD /* BMI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = BMI; sourceTree = "<group>"; };
+		E16959712B8BBC42002B91AD /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
+		E16959722B8BBC42002B91AD /* Exercise */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Exercise; sourceTree = "<group>"; };
+		E16959732B8BBC42002B91AD /* History */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = History; sourceTree = "<group>"; };
+		E16959742B8BBC42002B91AD /* Notifications */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Notifications; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +80,7 @@
 		E159908B2B8A279900D54091 = {
 			isa = PBXGroup;
 			children = (
-				E15991432B8BB40500D54091 /* Packages */,
+				E169596F2B8BBC42002B91AD /* Packages */,
 				E15990962B8A279900D54091 /* Workout */,
 				E15990A92B8A279F00D54091 /* WorkoutTests */,
 				E15990B32B8A279F00D54091 /* WorkoutUITests */,
@@ -127,14 +132,14 @@
 			path = WorkoutUITests;
 			sourceTree = "<group>";
 		};
-		E15991432B8BB40500D54091 /* Packages */ = {
+		E169596F2B8BBC42002B91AD /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				E15991452B8BB4FE00D54091 /* BMI */,
-				E15991462B8BB59A00D54091 /* Exercise */,
-				E159914B2B8BB8D900D54091 /* History */,
-				E15991482B8BB61F00D54091 /* Networking */,
-				E159914A2B8BB82800D54091 /* Notifications */,
+				E16959702B8BBC42002B91AD /* BMI */,
+				E16959712B8BBC42002B91AD /* Networking */,
+				E16959722B8BBC42002B91AD /* Exercise */,
+				E16959732B8BBC42002B91AD /* History */,
+				E16959742B8BBC42002B91AD /* Notifications */,
 			);
 			path = Packages;
 			sourceTree = "<group>";
@@ -243,7 +248,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E16959772B8BBC42002B91AD /* Exercise in Resources */,
+				E16959752B8BBC42002B91AD /* BMI in Resources */,
 				E15990A12B8A279E00D54091 /* Preview Assets.xcassets in Resources */,
+				E16959782B8BBC42002B91AD /* History in Resources */,
+				E16959762B8BBC42002B91AD /* Networking in Resources */,
+				E16959792B8BBC42002B91AD /* Notifications in Resources */,
 				E159909E2B8A279E00D54091 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
