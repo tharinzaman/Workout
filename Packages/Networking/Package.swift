@@ -29,6 +29,10 @@ let package = Package(
         ),
         .target(
             name: "NetworkingDomain"
+        ),
+        .testTarget(
+            name: "NetworkingDomainTests",
+            dependencies: ["NetworkingDomain"]
         )
     ]
 )

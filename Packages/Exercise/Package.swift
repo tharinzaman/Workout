@@ -23,6 +23,9 @@ let package = Package(
     dependencies: [
         .package(
             path: "../Packages/Networking"
+        ),
+        .package(
+            path: "../Packages/History"
         )
     ],
     targets: [
