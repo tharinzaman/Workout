@@ -7,7 +7,25 @@
 		<key>Workout.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>4</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>E15990932B8A279900D54091</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E15990A52B8A279F00D54091</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E15990AF2B8A279F00D54091</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

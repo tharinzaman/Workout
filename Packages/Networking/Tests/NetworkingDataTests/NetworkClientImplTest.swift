@@ -9,6 +9,7 @@ import Foundation
 import XCTest
 import NetworkingDomain
 @testable import NetworkingData
+import TestingUtils
 
 @available(
     iOS 13.0.0,
@@ -83,7 +84,7 @@ class NetworkClientImplTest: XCTestCase {
         }
         // ACT
         do {
-            let result: [Exercise] = try await client.fetch(
+            let _: [Exercise] = try await client.fetch(
                 from: urlString,
                 session: self.session
             )
@@ -119,7 +120,7 @@ class NetworkClientImplTest: XCTestCase {
         }
         // ACT
         do {
-            let result: [Exercise] = try await client.fetch(
+            let _: [Exercise] = try await client.fetch(
                 from: urlString,
                 session: self.session
             )
@@ -154,7 +155,7 @@ class NetworkClientImplTest: XCTestCase {
         }
         // ACT
         do {
-            let result: [Exercise] = try await client.fetch(
+            let _: [Exercise] = try await client.fetch(
                 from: urlString,
                 session: self.session
             )
