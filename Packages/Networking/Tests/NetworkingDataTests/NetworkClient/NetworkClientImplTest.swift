@@ -9,7 +9,6 @@ import Foundation
 import XCTest
 import NetworkingDomain
 @testable import NetworkingData
-import TestingUtils
 
 @available(
     iOS 13.0.0,

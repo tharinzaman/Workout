@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import NetworkingDomain
 
 @available(iOS 13.0.0, *)
 internal class FetchImpl: Fetch {
@@ -18,7 +19,7 @@ internal class FetchImpl: Fetch {
         self.client = client
     }
     
-    public func execute<T:Decodable>(
+    func execute<T:Decodable>(
         from url: String,
         session: URLSession
     ) async throws -> [T] {
