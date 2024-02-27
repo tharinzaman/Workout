@@ -8,7 +8,7 @@
 import Foundation
 
 @available(iOS 13.0.0, *)
-public protocol FetchProtocol {
+public protocol Fetch {
     
     func execute<T:Decodable>(
         from url: String,

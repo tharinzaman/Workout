@@ -9,11 +9,13 @@ import Foundation
 import TestingUtils
 
 @available(iOS 13.0.0, *)
-final class MockFetchSuccess: FetchProtocol {
+public final class MockFetchSuccess: Fetch {
+    
+    public init() {}
     
     private(set) var executeCalled = false
     
-    func execute<T : Decodable>(from url: String, session: URLSession) async throws -> [T] {
+    public func execute<T : Decodable>(from url: String, session: URLSession) async throws -> [T] {
         executeCalled = true
         return StaticLoader.loadJSONFromFileReturnDecodedData(file: "MockNetworkResponse")
     }
@@ -21,11 +23,13 @@ final class MockFetchSuccess: FetchProtocol {
 }
 
 @available(iOS 13.0.0, *)
-final class MockFetchInvalidURL: FetchProtocol {
+public final class MockFetchInvalidURL: Fetch {
+    
+    public init() {}
     
     private(set) var executeCalled = false
     
-    func execute<T : Decodable>(from url: String, session: URLSession) async throws -> [T] {
+    public func execute<T : Decodable>(from url: String, session: URLSession) async throws -> [T] {
         executeCalled = true
         throw NetworkError.invalidURL
     }
@@ -33,11 +37,13 @@ final class MockFetchInvalidURL: FetchProtocol {
 }
 
 @available(iOS 13.0.0, *)
-final class MockFetchInvalidResponse: FetchProtocol {
+public final class MockFetchInvalidResponse: Fetch {
+    
+    public init() {}
     
     private(set) var executeCalled = false
     
-    func execute<T : Decodable>(from url: String, session: URLSession) async throws -> [T] {
+    public func execute<T : Decodable>(from url: String, session: URLSession) async throws -> [T] {
         executeCalled = true
         throw NetworkError.invalidResponse
     }
@@ -45,11 +51,13 @@ final class MockFetchInvalidResponse: FetchProtocol {
 }
 
 @available(iOS 13.0.0, *)
-final class MockFetchInvalidData: FetchProtocol {
+public final class MockFetchInvalidData: Fetch {
+    
+    public init() {}
     
     private(set) var executeCalled = false
     
-    func execute<T : Decodable>(from url: String, session: URLSession) async throws -> [T] {
+    public func execute<T : Decodable>(from url: String, session: URLSession) async throws -> [T] {
         executeCalled = true
         throw NetworkError.invalidData
     }

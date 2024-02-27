@@ -8,7 +8,7 @@
 import Foundation
 
 @available(iOS 13.0.0, *)
-public class Fetch: FetchProtocol {
+internal class FetchImpl: Fetch {
     
     private let client: NetworkClient
     

@@ -12,12 +12,12 @@ import XCTest
     iOS 13.0.0,
     *
 )
-final class FetchTest: XCTestCase {
+final class FetchImplTest: XCTestCase {
     
     func test_executeFetch_success() async throws {
         // ASSIGN
         let client = MockNetworkClientSuccess()
-        let fetch = Fetch(
+        let fetch = FetchImpl(
             client: client
         )
         // ACT
@@ -34,7 +34,7 @@ final class FetchTest: XCTestCase {
     func test_executeFetch_invalidURL() async {
         // ASSIGN
         let client = MockNetworkClientInvalidURL()
-        let fetch = Fetch(
+        let fetch = FetchImpl(
             client: client
         )
         // ACT
@@ -63,7 +63,7 @@ final class FetchTest: XCTestCase {
     func test_executeFetch_invalidResponse() async {
         // ASSIGN
         let client = MockNetworkClientInvalidResponse()
-        let fetch = Fetch(
+        let fetch = FetchImpl(
             client: client
         )
         // ACT
@@ -92,7 +92,7 @@ final class FetchTest: XCTestCase {
     func test_executeFetch_invalidData() async {
         // ASSIGN
         let client = MockNetworkClientInvalidData()
-        let fetch = Fetch(
+        let fetch = FetchImpl(
             client: client
         )
         // ACT
