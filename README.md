@@ -3,3 +3,4 @@ see a record of their past workouts, and calculate their BMI. It is modularised 
 are created based on specific features and then internally divided into submodules for their data, domain and presentation layers.
 Interactions between modules are conducted through use cases. The application utilises local notifications to remind the user to 
 partake in their daily workout. It also utilises SwiftData to display a record of the user's past workouts. 
+Swinject is used as the dependency injection framework.
