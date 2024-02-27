@@ -34,7 +34,9 @@ fileprivate func buildDependencyInjectionContainer() -> Container {
         RegisterNotification.self
     ) { _ in
         return RegisterNotificationImpl(
-            helper: NotificationHelperImpl()
+            helper: NotificationHelperImpl(
+                notificationCenter: .current()
+            )
         )
     }
     

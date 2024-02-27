@@ -3,7 +3,11 @@ import UserNotifications
 
 internal class NotificationHelperImpl: NotificationHelper {
     
-    private let notificationCenter = UNUserNotificationCenter.current()
+    private let notificationCenter : UNUserNotificationCenter
+    
+    init(notificationCenter: UNUserNotificationCenter) {
+        self.notificationCenter = notificationCenter
+    }
     
     func registerNotification(
         identifier: String,
