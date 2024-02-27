@@ -3,9 +3,11 @@ import UserNotifications
 
 internal class NotificationHelperImpl: NotificationHelper {
     
-    private let notificationCenter : UNUserNotificationCenter
+    private let notificationCenter : UNUserNotificationCenterProtocol
     
-    init(notificationCenter: UNUserNotificationCenter) {
+    init(
+        notificationCenter: UNUserNotificationCenterProtocol
+    ) {
         self.notificationCenter = notificationCenter
     }
     
@@ -122,7 +124,8 @@ internal class NotificationHelperImpl: NotificationHelper {
             withIdentifiers: [identifier]
         )
         notificationCenter.add(
-            request
+            request,
+            withCompletionHandler: nil
         )
     }
     

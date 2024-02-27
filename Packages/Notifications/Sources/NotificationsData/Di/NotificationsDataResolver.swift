@@ -8,6 +8,7 @@
 import Foundation
 import NotificationsDomain
 import Swinject
+import UserNotifications
 
 class NotificationsDataResolver {
     
@@ -35,7 +36,7 @@ fileprivate func buildDependencyInjectionContainer() -> Container {
     ) { _ in
         return RegisterNotificationImpl(
             helper: NotificationHelperImpl(
-                notificationCenter: .current()
+                notificationCenter: UNUserNotificationCenter.current()
             )
         )
     }

@@ -9,29 +9,45 @@ import Foundation
 import UserNotifications
 import NotificationsDomain
 
+class MockNSCoder: NSCoder {
+    var authorizationStatus = UNAuthorizationStatus.authorized.rawValue
+    
+    override func decodeInt64(forKey key: String) -> Int64 {
+        return Int64(authorizationStatus)
+    }
+    
+    override func decodeBool(forKey key: String) -> Bool {
+        return true
+    }
+}
+
 @available(
     iOS 13.0.0,
     *
 )
-final class MockUNUserNotificationCenter_PermissionsGranted: UNUserNotificationCenter {
-    
+final class MockUNUserNotificationCenter_PermissionsGranted: UNUserNotificationCenterProtocol {
+
+    init() {}
+        
     private(set) var getNotificationSettingsCalled = false
     private(set) var requestAuthorizationCalled = false
-    
-    override func getNotificationSettings(
+    private(set) var removePendingNotificationRequestsCalled = false
+    private(set) var addCalled = false
+
+    func getNotificationSettings(
         completionHandler: @escaping (
             UNNotificationSettings
         ) -> Void
     ) {
         getNotificationSettingsCalled = true
-        completionHandler(
-            MockUNNotificationSettingsAuthorized() ?? MockUNNotificationSettingsAuthorized(
-                coder: NSCoder()
-            )
-        )
+        if let settings = MockUNNotificationSettingsAuthorized(coder: MockNSCoder()) {
+            completionHandler(settings)
+        } else {
+            fatalError("Mocking UNNotificationSettings failed")
+        }
     }
     
-    override func requestAuthorization(
+    func requestAuthorization(
         options: UNAuthorizationOptions = [],
         completionHandler: @escaping (
             Bool,
@@ -44,31 +60,43 @@ final class MockUNUserNotificationCenter_PermissionsGranted: UNUserNotificationC
             nil
         )
     }
+    
+    func removePendingNotificationRequests(withIdentifiers identifiers: [String]) {
+        removePendingNotificationRequestsCalled = true
+    }
+    
+    func add(_ request: UNNotificationRequest, withCompletionHandler completionHandler: ((Error?) -> Void)?) {
+        addCalled = true
+    }
 }
 
 @available(
     iOS 13.0.0,
     *
 )
-final class MockUNUserNotificationCenter_PermissionsDenied: UNUserNotificationCenter {
+final class MockUNUserNotificationCenter_PermissionsDenied: UNUserNotificationCenterProtocol {
+    
+    init() {}
     
     private(set) var getNotificationSettingsCalled = false
     private(set) var requestAuthorizationCalled = false
+    private(set) var removePendingNotificationRequestsCalled = false
+    private(set) var addCalled = false
     
-    override func getNotificationSettings(
+    func getNotificationSettings(
         completionHandler: @escaping (
             UNNotificationSettings
         ) -> Void
     ) {
         getNotificationSettingsCalled = true
-        completionHandler(
-            MockUNNotificationSettingsDenied() ?? MockUNNotificationSettingsDenied(
-                coder: NSCoder()
-            )
-        )
+        if let settings = MockUNNotificationSettingsDenied(coder: MockNSCoder()) {
+            completionHandler(settings)
+        } else {
+            fatalError("Mocking UNNotificationSettings failed")
+        }
     }
     
-    override func requestAuthorization(
+    func requestAuthorization(
         options: UNAuthorizationOptions = [],
         completionHandler: @escaping (
             Bool,
@@ -81,31 +109,43 @@ final class MockUNUserNotificationCenter_PermissionsDenied: UNUserNotificationCe
             nil
         )
     }
+    
+    func removePendingNotificationRequests(withIdentifiers identifiers: [String]) {
+        removePendingNotificationRequestsCalled = true
+    }
+    
+    func add(_ request: UNNotificationRequest, withCompletionHandler completionHandler: ((Error?) -> Void)?) {
+        addCalled = true
+    }
 }
 
 @available(
     iOS 13.0.0,
     *
 )
-final class MockUNUserNotificationCenter_PermissionsNotDetermined: UNUserNotificationCenter {
+final class MockUNUserNotificationCenter_PermissionsNotDetermined: UNUserNotificationCenterProtocol {
+    
+    init() {}
     
     private(set) var getNotificationSettingsCalled = false
     private(set) var requestAuthorizationCalled = false
+    private(set) var removePendingNotificationRequestsCalled = false
+    private(set) var addCalled = false
     
-    override func getNotificationSettings(
+    func getNotificationSettings(
         completionHandler: @escaping (
             UNNotificationSettings
         ) -> Void
     ) {
         getNotificationSettingsCalled = true
-        completionHandler(
-            MockUNNotificationSettingsNotDetermined() ?? MockUNNotificationSettingsNotDetermined(
-                coder: NSCoder()
-            )
-        )
+        if let settings = MockUNNotificationSettingsNotDetermined(coder: MockNSCoder()) {
+            completionHandler(settings)
+        } else {
+            fatalError("Mocking UNNotificationSettings failed")
+        }
     }
     
-    override func requestAuthorization(
+    func requestAuthorization(
         options: UNAuthorizationOptions = [],
         completionHandler: @escaping (
             Bool,
@@ -118,31 +158,43 @@ final class MockUNUserNotificationCenter_PermissionsNotDetermined: UNUserNotific
             nil
         )
     }
+    
+    func removePendingNotificationRequests(withIdentifiers identifiers: [String]) {
+        removePendingNotificationRequestsCalled = true
+    }
+    
+    func add(_ request: UNNotificationRequest, withCompletionHandler completionHandler: ((Error?) -> Void)?) {
+        addCalled = true
+    }
 }
 
 @available(
     iOS 13.0.0,
     *
 )
-final class MockUNUserNotificationCenter_RequestAuthReturnsError: UNUserNotificationCenter {
+final class MockUNUserNotificationCenter_RequestAuthReturnsError: UNUserNotificationCenterProtocol {
+    
+    init() {}
     
     private(set) var getNotificationSettingsCalled = false
     private(set) var requestAuthorizationCalled = false
+    private(set) var removePendingNotificationRequestsCalled = false
+    private(set) var addCalled = false
     
-    override func getNotificationSettings(
+    func getNotificationSettings(
         completionHandler: @escaping (
             UNNotificationSettings
         ) -> Void
     ) {
         getNotificationSettingsCalled = true
-        completionHandler(
-            MockUNNotificationSettingsNotDetermined() ?? MockUNNotificationSettingsNotDetermined(
-                coder: NSCoder()
-            )
-        )
+        if let settings = MockUNNotificationSettingsNotDetermined(coder: MockNSCoder()) {
+            completionHandler(settings)
+        } else {
+            fatalError("Mocking UNNotificationSettings failed")
+        }
     }
     
-    override func requestAuthorization(
+    func requestAuthorization(
         options: UNAuthorizationOptions = [],
         completionHandler: @escaping (
             Bool,
@@ -155,31 +207,43 @@ final class MockUNUserNotificationCenter_RequestAuthReturnsError: UNUserNotifica
             NotificationError.failedToRegisterNotification
         )
     }
+    
+    func removePendingNotificationRequests(withIdentifiers identifiers: [String]) {
+        removePendingNotificationRequestsCalled = true
+    }
+    
+    func add(_ request: UNNotificationRequest, withCompletionHandler completionHandler: ((Error?) -> Void)?) {
+        addCalled = true
+    }
 }
 
 @available(
     iOS 13.0.0,
     *
 )
-final class MockUNUserNotificationCenter_NotifNotAllowed: UNUserNotificationCenter {
+final class MockUNUserNotificationCenter_UserDidNotAllow: UNUserNotificationCenterProtocol {
+    
+    init() {}
     
     private(set) var getNotificationSettingsCalled = false
     private(set) var requestAuthorizationCalled = false
+    private(set) var removePendingNotificationRequestsCalled = false
+    private(set) var addCalled = false
     
-    override func getNotificationSettings(
+    func getNotificationSettings(
         completionHandler: @escaping (
             UNNotificationSettings
         ) -> Void
     ) {
         getNotificationSettingsCalled = true
-        completionHandler(
-            MockUNNotificationSettingsNotDetermined() ?? MockUNNotificationSettingsNotDetermined(
-                coder: NSCoder()
-            )
-        )
+        if let settings = MockUNNotificationSettingsNotDetermined(coder: MockNSCoder()) {
+            completionHandler(settings)
+        } else {
+            fatalError("Mocking UNNotificationSettings failed")
+        }
     }
     
-    override func requestAuthorization(
+    func requestAuthorization(
         options: UNAuthorizationOptions = [],
         completionHandler: @escaping (
             Bool,
@@ -191,5 +255,13 @@ final class MockUNUserNotificationCenter_NotifNotAllowed: UNUserNotificationCent
             false,
             nil
         )
+    }
+    
+    func removePendingNotificationRequests(withIdentifiers identifiers: [String]) {
+        removePendingNotificationRequestsCalled = true
+    }
+    
+    func add(_ request: UNNotificationRequest, withCompletionHandler completionHandler: ((Error?) -> Void)?) {
+        addCalled = true
     }
 }
