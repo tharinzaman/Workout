@@ -1,7 +1,7 @@
 import NotificationsDomain
 import UserNotifications
 
-class NotificationHelperImpl: NotificationHelper {
+internal class NotificationHelperImpl: NotificationHelper {
     
     private let notificationCenter = UNUserNotificationCenter.current()
     
