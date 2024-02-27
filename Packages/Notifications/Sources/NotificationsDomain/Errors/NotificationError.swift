@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+public enum NotificationError: Error {
+    case missingPermissions
+    case failedToRegisterNotification
+    case unknownNotificationError
+}

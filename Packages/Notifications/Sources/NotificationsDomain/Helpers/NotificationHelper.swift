@@ -18,5 +18,4 @@ public protocol NotificationHelper {
         daily: Bool
     ) throws
     
-    func areNotificationsEnabled() -> Bool
 }

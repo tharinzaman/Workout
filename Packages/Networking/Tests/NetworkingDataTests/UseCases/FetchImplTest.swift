@@ -6,7 +6,8 @@
 //
 
 import XCTest
-@testable import NetworkingDomain
+import NetworkingDomain
+@testable import NetworkingData
 
 @available(
     iOS 13.0.0,
@@ -45,7 +46,6 @@ final class FetchImplTest: XCTestCase {
                     session: .shared
                 )
         } catch {
-            // ASSIGN
             guard let networkError = error as? NetworkError else {
                 XCTFail(
                     "Wrong type of error"
@@ -74,7 +74,6 @@ final class FetchImplTest: XCTestCase {
                     session: .shared
                 )
         } catch {
-            // ASSIGN
             guard let networkError = error as? NetworkError else {
                 XCTFail(
                     "Wrong type of error"
@@ -103,7 +102,6 @@ final class FetchImplTest: XCTestCase {
                     session: .shared
                 )
         } catch {
-            // ASSIGN
             guard let networkError = error as? NetworkError else {
                 XCTFail(
                     "Wrong type of error"
