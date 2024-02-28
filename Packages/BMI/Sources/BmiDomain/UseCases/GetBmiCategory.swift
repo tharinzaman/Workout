@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+public protocol GetBmiCategory {
+    
+    func execute(
+        bmi: Double
+    ) -> BmiCategory
+}

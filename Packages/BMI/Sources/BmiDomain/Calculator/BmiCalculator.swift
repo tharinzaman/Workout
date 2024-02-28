@@ -6,3 +6,20 @@
 //
 
 import Foundation
+
+public protocol BmiCalculator {
+    
+    func calculateMetricBmi(
+        height: Double,
+        weight: Double
+    ) -> Double
+    
+    func calculateImperialBmi(
+        height: Double,
+        weight: Double
+    ) -> Double
+    
+    func calculateBmiCategory(
+        bmi: Double
+    ) -> BmiCategory
+}

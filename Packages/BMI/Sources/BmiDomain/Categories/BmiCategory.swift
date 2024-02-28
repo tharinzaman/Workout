@@ -15,8 +15,3 @@ public enum BmiCategory {
     case obese
     
 }
-
-public enum UnitCategory {
-    case imperial
-    case metric
-}

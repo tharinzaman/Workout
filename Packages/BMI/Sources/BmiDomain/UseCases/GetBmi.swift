@@ -7,3 +7,12 @@
 
 import Foundation
 
+public protocol GetBmi {
+    
+    func execute(
+        height: Double,
+        weight: Double,
+        unit: UnitCategory
+    ) -> Double
+    
+}

@@ -6,3 +6,13 @@
 //
 
 import Foundation
+import BmiDomain
+
+internal struct GetBmiImpl: GetBmi {
+    
+    
+    func execute(height: Double, weight: Double, unit: BmiDomain.UnitCategory) -> Double {
+        <#code#>
+    }
+    
+}

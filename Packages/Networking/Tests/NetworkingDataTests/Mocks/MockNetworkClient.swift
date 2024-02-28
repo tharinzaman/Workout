@@ -7,6 +7,7 @@
 
 import Foundation
 import NetworkingDomain
+import TestingUtils
 
 @available(iOS 13.0.0, *)
 final class MockNetworkClientSuccess : NetworkClient {

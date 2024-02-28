@@ -1,7 +1,7 @@
 import NotificationsDomain
 import UserNotifications
 
-internal class NotificationHelperImpl: NotificationHelper {
+internal struct NotificationHelperImpl: NotificationHelper {
     
     private let notificationCenter : UNUserNotificationCenterProtocol
     

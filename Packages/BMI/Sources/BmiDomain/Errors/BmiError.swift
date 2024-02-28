@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+public enum BmiError {
+    case noWeightPassed
+    case noHeightPassed
+}

@@ -13,7 +13,7 @@ import Swinject
     iOS 13.0.0,
     *
 )
-final class NetworkingDataResolver {
+public struct NetworkingDataResolver {
     
     private init() {}
     
@@ -21,7 +21,7 @@ final class NetworkingDataResolver {
     
     private var container = buildDependencyInjectionContainer()
     
-    func resolve<T>(
+    public func resolve<T>(
         _ type: T.Type
     ) -> T? {
         return container.resolve(

@@ -8,7 +8,7 @@
 import Foundation
 import NotificationsDomain
 
-internal class RegisterNotificationImpl: RegisterNotification {
+internal struct RegisterNotificationImpl: RegisterNotification {
     
     private let helper: NotificationHelper
     

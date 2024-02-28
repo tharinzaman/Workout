@@ -10,7 +10,7 @@ import NotificationsDomain
 import Swinject
 import UserNotifications
 
-final class NotificationsDataResolver {
+public struct NotificationsDataResolver {
     
     private init() {}
     
@@ -18,7 +18,7 @@ final class NotificationsDataResolver {
     
     private var container = buildDependencyInjectionContainer()
     
-    func resolve<T>(
+    public func resolve<T>(
         _ type: T.Type
     ) -> T? {
         return container.resolve(

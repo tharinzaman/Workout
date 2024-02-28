@@ -27,14 +27,15 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "NetworkingData",
-            dependencies: ["NetworkingDomain", "Swinject"]
+            dependencies: ["NetworkingDomain", "Swinject", "TestingUtils"]
         ),
         .testTarget(
             name: "NetworkingDataTests",
-            dependencies: ["NetworkingData"]
+            dependencies: ["NetworkingData", "TestingUtils"]
         ),
         .target(
             name: "NetworkingDomain"
-        )
+        ),
+        .target(name: "TestingUtils")
     ]
 )

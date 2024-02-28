@@ -9,7 +9,7 @@ import Foundation
 import NetworkingDomain
 
 @available(iOS 13.0.0, *)
-internal class NetworkClientImpl: NetworkClient {
+internal struct NetworkClientImpl: NetworkClient {
     
     func fetch<T : Decodable>(from url: String, session: URLSession) async throws -> [T] {
         
