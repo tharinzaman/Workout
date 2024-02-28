@@ -13,7 +13,9 @@ import Swinject
     iOS 13.0.0,
     *
 )
-class NetworkingDataResolver {
+final class NetworkingDataResolver {
+    
+    private init() {}
     
     static let shared = NetworkingDataResolver()
     

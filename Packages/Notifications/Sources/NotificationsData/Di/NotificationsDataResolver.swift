@@ -10,7 +10,9 @@ import NotificationsDomain
 import Swinject
 import UserNotifications
 
-class NotificationsDataResolver {
+final class NotificationsDataResolver {
+    
+    private init() {}
     
     static let shared = NotificationsDataResolver()
     
