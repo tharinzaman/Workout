@@ -31,7 +31,10 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "BmiData",
-            dependencies: ["BmiDomain", "Swinject"]
+            dependencies: [
+                "BmiDomain",
+                "Swinject"
+            ]
         ),
         .testTarget(
             name: "BmiDataTests",
@@ -43,6 +46,10 @@ let package = Package(
         .target(
             name: "BmiPresentation",
             dependencies: ["BmiDomain"]
+        ),
+        .testTarget(
+            name: "BmiPresentationTests",
+            dependencies: ["BmiPresentation"]
         )
     ]
 )

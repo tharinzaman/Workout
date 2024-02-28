@@ -7,12 +7,10 @@
 
 import SwiftUI
 
-struct SwiftUIView: View {
+@available(iOS 13.0.0, *)
+struct BmiCalculatorView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-#Preview {
-    SwiftUIView()
-}

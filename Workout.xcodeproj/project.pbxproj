@@ -12,6 +12,7 @@
 		E15990A12B8A279E00D54091 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E15990A02B8A279E00D54091 /* Preview Assets.xcassets */; };
 		E15990CA2B8BA00200D54091 /* WorkoutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15990C92B8BA00200D54091 /* WorkoutApp.swift */; };
 		E15990CE2B8BA05800D54091 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15990CC2B8BA05700D54091 /* WelcomeScreen.swift */; };
+		E162BE1D2B8FA2DA00170E63 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E162BE1C2B8FA2DA00170E63 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		E162BE192B8F60EE00170E63 /* Workout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Workout.app; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/Workout.app"; sourceTree = "<absolute>"; };
 		E162BE1A2B8F60EE00170E63 /* WorkoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WorkoutTests.xctest; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/WorkoutTests.xctest"; sourceTree = "<absolute>"; };
 		E162BE1B2B8F60EE00170E63 /* WorkoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WorkoutUITests.xctest; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/WorkoutUITests.xctest"; sourceTree = "<absolute>"; };
+		E162BE1C2B8FA2DA00170E63 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				E15990C92B8BA00200D54091 /* WorkoutApp.swift */,
 				E159909D2B8A279E00D54091 /* Assets.xcassets */,
 				E159909F2B8A279E00D54091 /* Preview Content */,
+				E162BE1C2B8FA2DA00170E63 /* TestView.swift */,
 			);
 			path = Workout;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E162BE1D2B8FA2DA00170E63 /* TestView.swift in Sources */,
 				E15990CA2B8BA00200D54091 /* WorkoutApp.swift in Sources */,
 				E12F92982B8C9442007F8ED8 /* Item.swift in Sources */,
 				E15990CE2B8BA05800D54091 /* WelcomeScreen.swift in Sources */,

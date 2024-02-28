@@ -8,8 +8,28 @@
 import SwiftUI
 
 struct TestView: View {
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(
+            alignment: .center,
+            spacing: 10
+        ) {
+            Text(
+                "YOUR BMI"
+            )
+            Text(
+                "24"
+            )
+            .fontWeight(
+                .bold
+            )
+            Text(
+                "Healthy"
+            )
+            Text(
+                "Your weight is healthy, keep it how it is"
+            )
+        }
     }
 }
 

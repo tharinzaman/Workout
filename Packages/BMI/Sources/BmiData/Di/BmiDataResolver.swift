@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import BmiDomain
 import Swinject
 
 public struct BmiDataResolver {

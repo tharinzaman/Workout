@@ -7,12 +7,12 @@
 
 import Foundation
 
-public enum BmiCategory {
+public enum BmiCategory: String {
     
-    case underweight
-    case healthy
-    case overweight
-    case obese
-    case invalid
+    case underweight = "Underweight"
+    case healthy = "Healthy"
+    case overweight = "Overweight"
+    case obese = "Obese"
+    case invalid = "Invalid"
     
 }

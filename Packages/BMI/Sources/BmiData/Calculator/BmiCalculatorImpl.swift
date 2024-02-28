@@ -8,7 +8,7 @@
 import Foundation
 import BmiDomain
 
-internal struct BmiCalculatorImpl: BmiCalculator {
+struct BmiCalculatorImpl: BmiCalculator {
     
     
     func calculateMetricBmi(height: Double, weight: Double) throws -> Double {
