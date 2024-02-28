@@ -11,5 +11,5 @@ public protocol GetBmiCategory {
     
     func execute(
         bmi: Double
-    ) -> BmiCategory
+    ) throws -> BmiCategory
 }

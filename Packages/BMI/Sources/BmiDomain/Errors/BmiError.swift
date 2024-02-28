@@ -7,7 +7,8 @@
 
 import Foundation
 
-public enum BmiError {
-    case noWeightPassed
-    case noHeightPassed
+public enum BmiError: Error {
+    case invalidWeightPassed
+    case invalidHeightPassed
+    case invalidBmiPassed
 }

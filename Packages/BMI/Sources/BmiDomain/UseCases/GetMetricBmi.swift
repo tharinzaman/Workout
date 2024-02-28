@@ -12,6 +12,6 @@ public protocol GetMetricBmi {
     func execute(
         height: Double,
         weight: Double
-    ) -> Double
+    ) throws -> Double
     
 }

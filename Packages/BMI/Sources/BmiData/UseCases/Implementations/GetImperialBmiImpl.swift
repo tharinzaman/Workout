@@ -22,8 +22,8 @@ internal struct GetImperialBmiImpl: GetImperialBmi{
         weight: Double,
         feet: Int,
         inches: Int
-    ) -> Double {
-        return calculator.calculateImperialBmi(
+    ) throws -> Double {
+        return try calculator.calculateImperialBmi(
             weight: weight,
             feet: feet,
             inches: inches

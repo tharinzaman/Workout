@@ -30,7 +30,7 @@ public struct NetworkingDataResolver {
     }
 }
 
-// We only want outside modules to interact with the use cases, therefore we will only register the use cases.
+// We only want outside modules to interact/access the use cases, therefore we will only register the use cases and nothing else in order to hide the others.
 @available(
     iOS 13.0.0,
     *

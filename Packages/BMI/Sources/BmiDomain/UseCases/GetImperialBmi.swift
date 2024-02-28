@@ -13,6 +13,6 @@ public protocol GetImperialBmi {
         weight: Double,
         feet: Int,
         inches: Int
-    ) -> Double
+    ) throws -> Double
     
 }

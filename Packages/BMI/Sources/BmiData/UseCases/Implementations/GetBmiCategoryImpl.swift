@@ -10,7 +10,13 @@ import BmiDomain
 
 internal struct GetBmiCategoryImpl: GetBmiCategory {
     
-    func execute(bmi: Double) -> BmiDomain.BmiCategory {
-        <#code#>
+    private let calculator: BmiCalculator
+    
+    init(calculator: BmiCalculator) {
+        self.calculator = calculator
+    }
+        
+    func execute(bmi: Double) throws -> BmiCategory {
+        return try calculator.calculateBmiCategory(bmi: bmi)
     }
 }

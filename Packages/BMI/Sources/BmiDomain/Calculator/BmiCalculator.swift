@@ -12,14 +12,15 @@ public protocol BmiCalculator {
     func calculateMetricBmi(
         height: Double,
         weight: Double
-    ) -> Double
+    ) throws -> Double
     
     func calculateImperialBmi(
-        height: Double,
-        weight: Double
-    ) -> Double
+        weight: Double,
+        feet: Int,
+        inches: Int
+    ) throws -> Double
     
     func calculateBmiCategory(
         bmi: Double
-    ) -> BmiCategory
+    ) throws -> BmiCategory
 }

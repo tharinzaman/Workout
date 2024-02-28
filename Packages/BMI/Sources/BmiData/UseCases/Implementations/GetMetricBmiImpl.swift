@@ -21,8 +21,8 @@ internal struct GetMetricBmiImpl: GetMetricBmi {
     func execute(
         height: Double,
         weight: Double
-    ) -> Double {
-        return calculator.calculateMetricBmi(
+    ) throws -> Double {
+        return try calculator.calculateMetricBmi(
             height: height,
             weight: weight
         )

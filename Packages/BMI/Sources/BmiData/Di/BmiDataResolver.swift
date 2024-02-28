@@ -11,7 +11,8 @@ import Swinject
 
 public struct BmiDataResolver {
     
-    private init() {}
+    private init() {
+    }
     
     static let shared = BmiDataResolver()
     
@@ -26,21 +27,33 @@ public struct BmiDataResolver {
     }
 }
 
-// We only want outside modules to interact with the use cases, therefore we will only register the use cases.
+// We only want outside modules to interact/access the use cases, therefore we will only register the use cases and nothing else in order to hide the others.
 fileprivate func buildDependencyInjectionContainer() -> Container {
     
     let container = Container()
     
     container.register(
-        GetBmi.self
+        GetImperialBmi.self
     ) { _ in
-        return GetBmiImpl()
+        return GetImperialBmiImpl(
+            calculator: BmiCalculatorImpl()
+        )
+    }
+    
+    container.register(
+        GetMetricBmi.self
+    ) { _ in
+        return GetMetricBmiImpl(
+            calculator: BmiCalculatorImpl()
+        )
     }
     
     container.register(
         GetBmiCategory.self
     ) { _ in
-        return GetBmiCategoryImpl()
+        return GetBmiCategoryImpl(
+            calculator: BmiCalculatorImpl()
+        )
     }
     
     return container

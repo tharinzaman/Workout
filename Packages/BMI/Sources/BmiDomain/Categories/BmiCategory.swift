@@ -13,5 +13,6 @@ public enum BmiCategory {
     case healthy
     case overweight
     case obese
+    case invalid
     
 }
