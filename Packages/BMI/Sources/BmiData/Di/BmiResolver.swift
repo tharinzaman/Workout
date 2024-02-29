@@ -2,22 +2,19 @@
 //  File.swift
 //
 //
-//  Created by Tharin Zaman on 27/02/2024.
+//  Created by Tharin Zaman on 28/02/2024.
 //
 
 import Foundation
-import NetworkingDomain
+import BmiDomain
 import Swinject
 
-@available(
-    iOS 13.0.0,
-    *
-)
-public struct NetworkingDataResolver {
+public struct BmiResolver {
     
-    private init() {}
+    private init() {
+    }
     
-    static let shared = NetworkingDataResolver()
+    public static let shared = BmiResolver()
     
     private var container = buildDependencyInjectionContainer()
     
@@ -31,22 +28,33 @@ public struct NetworkingDataResolver {
 }
 
 // We only want outside modules to interact/access the use cases, therefore we will only register the use cases and nothing else in order to hide the others.
-@available(
-    iOS 13.0.0,
-    *
-)
 fileprivate func buildDependencyInjectionContainer() -> Container {
     
     let container = Container()
     
     container.register(
-        Fetch.self
+        GetImperialBmi.self
     ) { _ in
-        return FetchImpl(
-            client: NetworkClientImpl()
+        return GetImperialBmiImpl(
+            calculator: BmiCalculatorImpl()
+        )
+    }
+    
+    container.register(
+        GetMetricBmi.self
+    ) { _ in
+        return GetMetricBmiImpl(
+            calculator: BmiCalculatorImpl()
+        )
+    }
+    
+    container.register(
+        GetBmiCategory.self
+    ) { _ in
+        return GetBmiCategoryImpl(
+            calculator: BmiCalculatorImpl()
         )
     }
     
     return container
 }
-
