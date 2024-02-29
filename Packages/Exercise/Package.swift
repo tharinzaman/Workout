@@ -38,6 +38,10 @@ let package = Package(
                 .product(
                     name: "NetworkingDomain",
                     package: "Networking"
+                ),
+                .product(
+                    name: "NetworkingData",
+                    package: "Networking"
                 )
             ]
         ),

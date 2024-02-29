@@ -16,7 +16,7 @@ public final class MockGetImperialBmiSuccess: GetImperialBmi {
     
     public func execute(weight: Double, feet: Int, inches: Int) throws -> Double {
         executeCalled = true
-        return 21.0
+        return 24.0
     }
     
 }

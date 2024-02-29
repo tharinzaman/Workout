@@ -36,9 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E12AA50D2B907B1A00EFD62C /* Workout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workout.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E12AA50E2B907B1A00EFD62C /* WorkoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E12AA50F2B907B1A00EFD62C /* WorkoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkoutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E12AA50D2B907B1A00EFD62C /* Workout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Workout.app; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/Workout.app"; sourceTree = "<absolute>"; };
+		E12AA50E2B907B1A00EFD62C /* WorkoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WorkoutTests.xctest; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/WorkoutTests.xctest"; sourceTree = "<absolute>"; };
+		E12AA50F2B907B1A00EFD62C /* WorkoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WorkoutUITests.xctest; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/WorkoutUITests.xctest"; sourceTree = "<absolute>"; };
 		E12F928D2B8C85D8007F8ED8 /* BMI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = BMI; sourceTree = "<group>"; };
 		E12F928E2B8C85D8007F8ED8 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
 		E12F928F2B8C85D8007F8ED8 /* Exercise */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Exercise; sourceTree = "<group>"; };
@@ -99,9 +99,6 @@
 				E15990962B8A279900D54091 /* Workout */,
 				E15990A92B8A279F00D54091 /* WorkoutTests */,
 				E15990B32B8A279F00D54091 /* WorkoutUITests */,
-				E12AA50D2B907B1A00EFD62C /* Workout.app */,
-				E12AA50E2B907B1A00EFD62C /* WorkoutTests.xctest */,
-				E12AA50F2B907B1A00EFD62C /* WorkoutUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};

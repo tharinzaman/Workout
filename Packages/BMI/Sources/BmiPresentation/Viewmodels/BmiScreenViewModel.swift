@@ -52,13 +52,17 @@ final class BmiScreenViewModel: ObservableObject {
                     height: height,
                     weight: weight
                 )
-                self.bmi = String(bmi)
+                self.bmi = String(
+                    bmi
+                )
                 self.getBmiCategory(
                     bmi: bmi
                 )
             } catch {
                 if let generateAlert {
-                    self.alert = generateAlert.execute(error: error)
+                    self.alert = generateAlert.execute(
+                        error: error
+                    )
                 } else {
                     self.alert = AlertItem.unableToComplete
                 }
@@ -81,16 +85,21 @@ final class BmiScreenViewModel: ObservableObject {
                     feet: feet,
                     inches: inches
                 )
-                self.bmi = String(bmi)
+                self.bmi = String(
+                    bmi
+                )
                 self.getBmiCategory(
                     bmi: bmi
                 )
             } catch {
                 if let generateAlert {
-                    self.alert = generateAlert.execute(error: error)
+                    self.alert = generateAlert.execute(
+                        error: error
+                    )
                 } else {
                     self.alert = AlertItem.unableToComplete
-                }            }
+                }
+            }
         } else {
             self.alert = AlertItem.unableToComplete
         }
@@ -113,7 +122,9 @@ final class BmiScreenViewModel: ObservableObject {
                 )
             } catch {
                 if let generateAlert {
-                    self.alert = generateAlert.execute(error: error)
+                    self.alert = generateAlert.execute(
+                        error: error
+                    )
                 } else {
                     self.alert = AlertItem.unableToComplete
                 }            }
