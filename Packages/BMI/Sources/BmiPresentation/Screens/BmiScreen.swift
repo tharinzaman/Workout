@@ -8,32 +8,56 @@
 import Foundation
 import SwiftUI
 import BmiDomain
+import BmiData
 
 @available(
-    iOS 14.0,
+    iOS 17.0,
     *
 )
-struct BmiScreen: View {
+public struct BmiScreen: View {
     
     @StateObject var vm: BmiScreenViewModel
     
-    init(
-        getBmiCategory: GetBmiCategory,
-        getMetricBmi: GetMetricBmi,
-        getImperialBmi: GetImperialBmi
-    ) {
+    public init() {
         _vm = StateObject(
             wrappedValue: BmiScreenViewModel(
-                getBmiCategory: getBmiCategory,
-                getMetricBmi: getMetricBmi,
-                getImperialBmi: getImperialBmi
+                getBmiCategory: BmiResolver.shared.resolve(
+                    GetBmiCategory.self
+                ),
+                getMetricBmi: BmiResolver.shared.resolve(
+                    GetMetricBmi.self
+                ),
+                getImperialBmi: BmiResolver.shared.resolve(
+                    GetImperialBmi.self
+                ),
+                generateAlert: BmiResolver.shared.resolve(
+                    GenerateAlert.self
+                )
             )
         )
     }
     
-    var body: some View {
-        VStack {
-            BmiResultView(vm: vm)
+    public var body: some View {
+        VStack(
+            spacing: 20
+        ) {
+            BmiCalculatorView(
+                vm: vm
+            ).frame(height: 400)
+            CalculateButton(
+                vm: vm
+            )
+            BmiResultView(
+                vm: vm
+            )
+        }.alert(
+            item: $vm.alert
+        ) { alert in
+            Alert(
+                title: alert.title,
+                message: alert.message,
+                dismissButton: alert.dismissButton
+            )
         }
     }
     

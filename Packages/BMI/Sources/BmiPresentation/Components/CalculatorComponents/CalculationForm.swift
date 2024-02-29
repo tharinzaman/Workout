@@ -12,10 +12,6 @@ struct CalculationForm: View {
     
     @ObservedObject var vm: BmiScreenViewModel
     
-    @State var height = ""
-    @State var weight = ""
-    @State var inches = ""
-    
     @FocusState private var focusedTextField: FocusTextField?
     
     init(vm: BmiScreenViewModel) {
@@ -31,8 +27,8 @@ struct CalculationForm: View {
             )
             {
                 TextField(
-                    vm.isMetric ? "Height (meters)" : "Height (feet)",
-                    text: $height
+                    vm.isMetric ? "Height (cm)" : "Height (ft)",
+                    text: $vm.height
                 ).focused(
                     $focusedTextField,
                     equals: .height
@@ -46,7 +42,7 @@ struct CalculationForm: View {
                 if !vm.isMetric {
                     TextField(
                         "Inches",
-                        text: $inches
+                        text: $vm.inches
                     ).focused(
                         $focusedTextField,
                         equals: .inches
@@ -66,7 +62,7 @@ struct CalculationForm: View {
             ){
                 TextField(
                     vm.isMetric ? "Weight (kg)" : "Weight (lbs)",
-                    text: $weight
+                    text: $vm.weight
                 ).focused(
                     $focusedTextField,
                     equals: .weight

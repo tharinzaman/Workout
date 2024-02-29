@@ -6,33 +6,14 @@
 //
 
 import SwiftUI
+import BmiPresentation
 
 struct TestView: View {
-    
+        
     var body: some View {
-        VStack(
-            alignment: .center,
-            spacing: 10
-        ) {
-            Text(
-                "YOUR BMI"
-            )
-            Text(
-                "24"
-            )
-            .fontWeight(
-                .bold
-            )
-            Text(
-                "Healthy"
-            )
-            Text(
-                "Your weight is healthy, keep it how it is"
-            )
-        }
+        BmiScreen()
     }
+    
 }
 
-#Preview {
-    TestView()
-}
+

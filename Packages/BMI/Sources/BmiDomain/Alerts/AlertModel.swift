@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 @available(iOS 13.0, *)
-struct AlertModel: Identifiable {
+public struct AlertModel: Identifiable {
     
     init(
         title: String,
@@ -23,10 +23,10 @@ struct AlertModel: Identifiable {
         )
     }
     
-    let id = UUID()
-    let title: Text
-    let message: Text
-    let dismissButton = Alert.Button.default(
+    public let id = UUID()
+    public let title: Text
+    public let message: Text
+    public let dismissButton = Alert.Button.default(
         Text(
             "OK"
         )

@@ -14,7 +14,7 @@ public struct NotificationsDataResolver {
     
     private init() {}
     
-    static let shared = NotificationsDataResolver()
+    public static let shared = NotificationsDataResolver()
     
     private var container = buildDependencyInjectionContainer()
     

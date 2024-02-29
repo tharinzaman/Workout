@@ -45,7 +45,7 @@ let package = Package(
         ),
         .target(
             name: "BmiPresentation",
-            dependencies: ["BmiDomain"]
+            dependencies: ["BmiDomain", "BmiData"]
         ),
         .testTarget(
             name: "BmiPresentationTests",

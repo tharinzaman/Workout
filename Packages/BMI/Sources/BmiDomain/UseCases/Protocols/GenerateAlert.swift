@@ -10,6 +10,6 @@ import Foundation
 @available(iOS 13.0, *)
 public protocol GenerateAlert {
     
-    func execute(error: Error) -> AlertItem
+    func execute(error: Error) -> AlertModel
     
 }

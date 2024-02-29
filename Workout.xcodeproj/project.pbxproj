@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E12AA5152B90A44300EFD62C /* BmiData in Frameworks */ = {isa = PBXBuildFile; productRef = E12AA5142B90A44300EFD62C /* BmiData */; };
+		E12AA5172B90A44300EFD62C /* BmiDomain in Frameworks */ = {isa = PBXBuildFile; productRef = E12AA5162B90A44300EFD62C /* BmiDomain */; };
+		E12AA5192B90A44300EFD62C /* BmiPresentation in Frameworks */ = {isa = PBXBuildFile; productRef = E12AA5182B90A44300EFD62C /* BmiPresentation */; };
 		E12F92982B8C9442007F8ED8 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12F92972B8C9441007F8ED8 /* Item.swift */; };
 		E159909E2B8A279E00D54091 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E159909D2B8A279E00D54091 /* Assets.xcassets */; };
 		E15990A12B8A279E00D54091 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E15990A02B8A279E00D54091 /* Preview Assets.xcassets */; };
@@ -33,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E12AA50D2B907B1A00EFD62C /* Workout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workout.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E12AA50E2B907B1A00EFD62C /* WorkoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E12AA50F2B907B1A00EFD62C /* WorkoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkoutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12F928D2B8C85D8007F8ED8 /* BMI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = BMI; sourceTree = "<group>"; };
 		E12F928E2B8C85D8007F8ED8 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
 		E12F928F2B8C85D8007F8ED8 /* Exercise */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Exercise; sourceTree = "<group>"; };
@@ -43,9 +49,6 @@
 		E15990A02B8A279E00D54091 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E15990C92B8BA00200D54091 /* WorkoutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutApp.swift; sourceTree = "<group>"; };
 		E15990CC2B8BA05700D54091 /* WelcomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
-		E162BE192B8F60EE00170E63 /* Workout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Workout.app; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/Workout.app"; sourceTree = "<absolute>"; };
-		E162BE1A2B8F60EE00170E63 /* WorkoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WorkoutTests.xctest; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/WorkoutTests.xctest"; sourceTree = "<absolute>"; };
-		E162BE1B2B8F60EE00170E63 /* WorkoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WorkoutUITests.xctest; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/WorkoutUITests.xctest"; sourceTree = "<absolute>"; };
 		E162BE1C2B8FA2DA00170E63 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,6 +57,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E12AA5192B90A44300EFD62C /* BmiPresentation in Frameworks */,
+				E12AA5152B90A44300EFD62C /* BmiData in Frameworks */,
+				E12AA5172B90A44300EFD62C /* BmiDomain in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +99,9 @@
 				E15990962B8A279900D54091 /* Workout */,
 				E15990A92B8A279F00D54091 /* WorkoutTests */,
 				E15990B32B8A279F00D54091 /* WorkoutUITests */,
+				E12AA50D2B907B1A00EFD62C /* Workout.app */,
+				E12AA50E2B907B1A00EFD62C /* WorkoutTests.xctest */,
+				E12AA50F2B907B1A00EFD62C /* WorkoutUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,9 +157,12 @@
 			);
 			name = Workout;
 			packageProductDependencies = (
+				E12AA5142B90A44300EFD62C /* BmiData */,
+				E12AA5162B90A44300EFD62C /* BmiDomain */,
+				E12AA5182B90A44300EFD62C /* BmiPresentation */,
 			);
 			productName = Workout;
-			productReference = E162BE192B8F60EE00170E63 /* Workout.app */;
+			productReference = E12AA50D2B907B1A00EFD62C /* Workout.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E15990A52B8A279F00D54091 /* WorkoutTests */ = {
@@ -168,7 +180,7 @@
 			);
 			name = WorkoutTests;
 			productName = WorkoutTests;
-			productReference = E162BE1A2B8F60EE00170E63 /* WorkoutTests.xctest */;
+			productReference = E12AA50E2B907B1A00EFD62C /* WorkoutTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		E15990AF2B8A279F00D54091 /* WorkoutUITests */ = {
@@ -186,7 +198,7 @@
 			);
 			name = WorkoutUITests;
 			productName = WorkoutUITests;
-			productReference = E162BE1B2B8F60EE00170E63 /* WorkoutUITests.xctest */;
+			productReference = E12AA50F2B907B1A00EFD62C /* WorkoutUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -222,6 +234,9 @@
 				Base,
 			);
 			mainGroup = E159908B2B8A279900D54091;
+			packageReferences = (
+				E12AA5132B90A44300EFD62C /* XCLocalSwiftPackageReference "Packages/BMI" */,
+			);
 			productRefGroup = E159908B2B8A279900D54091;
 			projectDirPath = "";
 			projectRoot = "";
@@ -353,7 +368,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -410,7 +425,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -597,6 +612,28 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		E12AA5132B90A44300EFD62C /* XCLocalSwiftPackageReference "Packages/BMI" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/BMI;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E12AA5142B90A44300EFD62C /* BmiData */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BmiData;
+		};
+		E12AA5162B90A44300EFD62C /* BmiDomain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BmiDomain;
+		};
+		E12AA5182B90A44300EFD62C /* BmiPresentation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BmiPresentation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E159908C2B8A279900D54091 /* Project object */;
 }

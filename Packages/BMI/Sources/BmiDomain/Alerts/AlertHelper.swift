@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+@available(iOS 13.0, *)
+public protocol AlertHelper {
+    
+    func errorToBmiErrorAlert(
+        error: Error
+    ) -> AlertModel
+    
+}

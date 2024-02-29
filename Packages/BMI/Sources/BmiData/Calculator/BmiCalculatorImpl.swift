@@ -10,7 +10,6 @@ import BmiDomain
 
 struct BmiCalculatorImpl: BmiCalculator {
     
-    
     func calculateMetricBmi(height: Double, weight: Double) throws -> Double {
         guard weight >= 0 else {
             throw BmiError.invalidWeightPassed
@@ -18,7 +17,8 @@ struct BmiCalculatorImpl: BmiCalculator {
         guard height >= 0 else {
             throw BmiError.invalidHeightPassed
         }
-        return (weight / (height * height)).rounded()
+        let heightInMeters = height / 100
+        return (weight / (heightInMeters * heightInMeters)).rounded()
     }
     
     func calculateImperialBmi(weight: Double, feet: Int, inches: Int) throws -> Double {
@@ -33,7 +33,7 @@ struct BmiCalculatorImpl: BmiCalculator {
     }
     
     func calculateBmiCategory(bmi: Double) throws -> BmiCategory {
-        guard bmi > 0 else {
+        guard bmi >= 0 else {
             throw BmiError.invalidBmiPassed
         }
         return switch bmi {

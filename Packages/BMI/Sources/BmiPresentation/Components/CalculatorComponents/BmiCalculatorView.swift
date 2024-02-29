@@ -8,7 +8,7 @@
 import SwiftUI
 
 @available(
-    iOS 15.0.0,
+    iOS 17.0.0,
     *
 )
 struct BmiCalculatorView: View {
@@ -22,11 +22,15 @@ struct BmiCalculatorView: View {
     }
     
     var body: some View {
-        Toggle(
-            vm.isMetric ? "Metric" : "Imperial",
-            isOn: $vm.isMetric
-        )
-        CalculationForm(vm: vm)
+        VStack {
+            UnitToggle(
+                vm: vm
+            )
+            CalculationForm(
+                vm: vm
+            )
+        }
+        
     }
 }
 
