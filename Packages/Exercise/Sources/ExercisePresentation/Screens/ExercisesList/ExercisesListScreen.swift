@@ -30,7 +30,11 @@ public struct ExercisesListScreen: View {
     
     public var body: some View {
         ZStack {
-            NavigationStack {
+            VStack(alignment: .leading) {
+                Text("🏋️ Workouts")
+                    .padding(20)
+                    .font(.title)
+                    .fontWeight(.bold)
                 List(
                     vm.exercises
                 ) { exercise in
@@ -38,9 +42,6 @@ public struct ExercisesListScreen: View {
                         exercise: exercise
                     )
                 }
-                .navigationTitle(
-                    "🏋️ Workout"
-                )
                 .listStyle(
                     .plain
                 )
@@ -50,7 +51,8 @@ public struct ExercisesListScreen: View {
             if vm.areExercisesLoading {
                 LoadingScreen()
             }
-        }.alert(
+        }
+        .alert(
             item: $vm.alert
         ) { alertItem in
             Alert(

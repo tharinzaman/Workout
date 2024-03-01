@@ -29,7 +29,7 @@ struct ExerciseButton: View {
     
     var body: some View {
         Button {
-            vm.shouldPresentExercise = true
+            vm.shouldPresentExercise.toggle()
         } label: {
             Text(
                 exercise.exercise.capitalized
@@ -56,6 +56,8 @@ struct ExerciseButton: View {
         .sheet(
             isPresented: $vm.shouldPresentExercise
         ) {
+            vm.endWorkout()
+        } content: {
             ExerciseScreen(
                 vm: self.vm,
                 exercise: self.exercise

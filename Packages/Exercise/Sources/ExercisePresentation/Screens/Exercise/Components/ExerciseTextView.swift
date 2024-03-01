@@ -6,13 +6,31 @@
 //
 
 import SwiftUI
+import ExerciseDomain
 
-struct SwiftUIView: View {
+@available(iOS 14.0.0, *)
+struct ExerciseTextView: View {
+    
+    private let exercise: Exercise
+
+    init(exercise: Exercise) {
+        self.exercise = exercise
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .center) {
+            Text(exercise.exercise.capitalized)
+                .font(.title)
+                .fontWeight(.bold)
+                .padding(30)
+            Text("Targets: \(exercise.bodyPart.capitalized)")
+                .font(.title3)
+                .fontWeight(.semibold)
+            Text(exercise.description)
+                .font(.body)
+                .padding(30)
+                .multilineTextAlignment(.center)
+        }
     }
 }
 
-#Preview {
-    SwiftUIView()
-}

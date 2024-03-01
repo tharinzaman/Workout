@@ -11,7 +11,7 @@ import SwiftUI
     iOS 14.0.0,
     *
 )
-struct WorkoutActionButton: View {
+fileprivate struct WorkoutActionButton: View {
     
     private let buttonTitle: String
     private let action: () -> ()
@@ -31,20 +31,58 @@ struct WorkoutActionButton: View {
                     width: 100,
                     height: 100
                 )
-                .foregroundColor(
-                    .green
-                )
-            Text(
-                buttonTitle
-            )
-            .fontWeight(
-                .bold
-            )
-            .font(
-                .title2
-            )
+                .foregroundColor(.green)
+            Text(buttonTitle)
+            .fontWeight(.bold)
+            .font(.title2)
         }.onTapGesture {
             action()
+        }
+    }
+}
+
+@available(iOS 14.0, *)
+struct WorkoutActionButtonsView: View {
+    
+    @ObservedObject var vm: ExerciseScreenViewModel
+    
+    init(vm: ExerciseScreenViewModel) {
+        self.vm = vm
+    }
+    
+    var body: some View {
+        if !vm.workoutStarted {
+            WorkoutActionButton(
+                buttonTitle: "Start",
+                action:  {
+                    vm.startWorkout()
+                }
+            )
+        } else {
+            HStack {
+                if vm.workoutRunning {
+                    WorkoutActionButton(
+                        buttonTitle: "Pause",
+                        action: {
+                            vm.pauseWorkout()
+                        }
+                    )
+                } else {
+                    WorkoutActionButton(
+                        buttonTitle: "Resume",
+                        action: {
+                            vm.resumeWorkout()
+                        }
+                    )
+                }
+                WorkoutActionButton(
+                    buttonTitle: "End",
+                    action: {
+                        vm.endWorkout()
+                    }
+                )
+            }
+            
         }
     }
 }

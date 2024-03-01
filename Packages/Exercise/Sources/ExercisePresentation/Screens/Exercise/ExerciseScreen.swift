@@ -13,7 +13,7 @@ import ExerciseDomain
     *
 )
 struct ExerciseScreen: View {
-        
+    
     @ObservedObject var vm: ExerciseScreenViewModel
     
     private let exercise: Exercise
@@ -27,12 +27,13 @@ struct ExerciseScreen: View {
     }
     
     var body: some View {
-        Text(
-            exercise.bodyPart
-        )
-        Text(
-            exercise.description
-        )
+        VStack(alignment: .center) {
+            ExerciseTextView(
+                exercise: exercise
+            )
+            WorkoutActionButtonsView(vm: vm)
+        }
     }
+    
 }
 
