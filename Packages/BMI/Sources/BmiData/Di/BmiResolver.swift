@@ -56,21 +56,5 @@ fileprivate func buildDependencyInjectionContainer() -> Container {
         )
     }
     
-    if #available(
-        iOS 13.0,
-        *
-    ) {
-        container.register(
-            GenerateAlert.self
-        ) {
-            _ in
-            return GenerateAlertImpl(
-                alertHelper: AlertHelperImpl()
-            )
-        }
-    } else {
-        // Fallback on earlier versions
-    }
-    
     return container
 }

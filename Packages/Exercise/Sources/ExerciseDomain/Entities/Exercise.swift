@@ -7,4 +7,10 @@
 
 import Foundation
 
-public struct 
+public struct Exercise: Decodable, Equatable {
+    
+    let exercise: String
+    let description: String
+    let bodyPart: String
+    
+}

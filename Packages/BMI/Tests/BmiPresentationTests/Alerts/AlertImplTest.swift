@@ -7,7 +7,7 @@
 
 import XCTest
 import BmiDomain
-@testable import BmiData
+@testable import BmiPresentation
 
 @available(
     iOS 13.0,

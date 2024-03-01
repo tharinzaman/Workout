@@ -18,7 +18,7 @@ final class BmiScreenViewModelTest: XCTestCase {
     private var getBmiCategory: GetBmiCategory!
     private var getMetricBmi: GetMetricBmi!
     private var getImperialBmi: GetImperialBmi!
-    private var generateAlert: GenerateAlert!
+    private var alertHelper: AlertHelper!
     
     private var vm: BmiScreenViewModel!
     
@@ -26,13 +26,13 @@ final class BmiScreenViewModelTest: XCTestCase {
         getBmiCategory = MockGetBmiCategorySuccess()
         getMetricBmi = MockGetMetricBmiSuccess()
         getImperialBmi = MockGetImperialBmiSuccess()
-        generateAlert = MockGenerateAlertSuccess()
+        alertHelper = MockAlertHelperSuccess()
         
         vm = BmiScreenViewModel(
             getBmiCategory: getBmiCategory,
             getMetricBmi: getMetricBmi,
             getImperialBmi: getImperialBmi,
-            generateAlert: generateAlert
+            alertHelper: alertHelper
         )
     }
     
@@ -40,7 +40,7 @@ final class BmiScreenViewModelTest: XCTestCase {
         getBmiCategory = nil
         getMetricBmi = nil
         getImperialBmi = nil
-        generateAlert = nil
+        alertHelper = nil
         
         vm = nil
     }
@@ -72,7 +72,7 @@ final class BmiScreenViewModelTest: XCTestCase {
             getBmiCategory: self.getBmiCategory,
             getMetricBmi: MockGetMetricBmiInvalidHeight(),
             getImperialBmi: self.getImperialBmi,
-            generateAlert: self.generateAlert
+            alertHelper: self.alertHelper
         )
         // ACT
         vm.getMetricBmi(
@@ -98,7 +98,7 @@ final class BmiScreenViewModelTest: XCTestCase {
             getBmiCategory: self.getBmiCategory,
             getMetricBmi: nil,
             getImperialBmi: self.getImperialBmi,
-            generateAlert: self.generateAlert
+            alertHelper: self.alertHelper
         )
         // ACT
         vm.getMetricBmi(
@@ -146,7 +146,7 @@ final class BmiScreenViewModelTest: XCTestCase {
             getBmiCategory: self.getBmiCategory,
             getMetricBmi: self.getMetricBmi,
             getImperialBmi: MockGetImperialBmiInvalidHeight(),
-            generateAlert: self.generateAlert
+            alertHelper: self.alertHelper
         )
         // ACT
         vm.getImperialBmi(
@@ -173,7 +173,7 @@ final class BmiScreenViewModelTest: XCTestCase {
             getBmiCategory: self.getBmiCategory,
             getMetricBmi: self.getMetricBmi,
             getImperialBmi: nil,
-            generateAlert: self.generateAlert
+            alertHelper: self.alertHelper
         )
         // ACT
         vm.getImperialBmi(
@@ -200,7 +200,7 @@ final class BmiScreenViewModelTest: XCTestCase {
             getBmiCategory: MockGetBmiCategoryFailure(),
             getMetricBmi: self.getMetricBmi,
             getImperialBmi: self.getImperialBmi,
-            generateAlert: self.generateAlert
+            alertHelper: self.alertHelper
         )
         // ACT
         vm.getMetricBmi(
@@ -227,7 +227,7 @@ final class BmiScreenViewModelTest: XCTestCase {
             getBmiCategory: nil,
             getMetricBmi: self.getMetricBmi,
             getImperialBmi: self.getImperialBmi,
-            generateAlert: self.generateAlert
+            alertHelper: self.alertHelper
         )
         // ACT
         vm.getMetricBmi(
@@ -247,26 +247,5 @@ final class BmiScreenViewModelTest: XCTestCase {
             vm.bmiCategory
         )
     }
-    
-    func test_getMetricBmi_failure_alertHelperNil() {
-        // ASSIGN
-        vm = BmiScreenViewModel(
-            getBmiCategory: self.getBmiCategory,
-            getMetricBmi: MockGetMetricBmiInvalidHeight(),
-            getImperialBmi: self.getImperialBmi,
-            generateAlert: nil
-        )
-        // ACT
-        vm.getMetricBmi(
-            height: 153,
-            weight: 57
-        )
-        // ASSERT
-        XCTAssertEqual(
-            vm.alert?.message,
-            AlertItem.unableToComplete.message
-        )
-        XCTAssertNil(vm.bmi)
-        XCTAssertNil(vm.bmiCategory)
-    }
+
 }

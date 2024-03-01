@@ -19,7 +19,7 @@ final class BmiScreenViewModel: ObservableObject {
     private let getBmiCategory: GetBmiCategory?
     private let getMetricBmi: GetMetricBmi?
     private let getImperialBmi: GetImperialBmi?
-    private let generateAlert: GenerateAlert?
+    private let alertHelper: AlertHelper
     
     @Published var alert: AlertModel? = nil
     @Published var bmi: String? = nil
@@ -34,12 +34,12 @@ final class BmiScreenViewModel: ObservableObject {
         getBmiCategory: GetBmiCategory?,
         getMetricBmi: GetMetricBmi?,
         getImperialBmi: GetImperialBmi?,
-        generateAlert: GenerateAlert?
+        alertHelper: AlertHelper
     ) {
         self.getBmiCategory = getBmiCategory
         self.getMetricBmi = getMetricBmi
         self.getImperialBmi = getImperialBmi
-        self.generateAlert = generateAlert
+        self.alertHelper = alertHelper
     }
     
     func getMetricBmi(
@@ -59,13 +59,9 @@ final class BmiScreenViewModel: ObservableObject {
                     bmi: bmi
                 )
             } catch {
-                if let generateAlert {
-                    self.alert = generateAlert.execute(
-                        error: error
-                    )
-                } else {
-                    self.alert = AlertItem.unableToComplete
-                }
+                self.alert = alertHelper.errorToBmiErrorAlert(
+                    error: error
+                )
             }
         } else {
             self.alert = AlertItem.unableToComplete
@@ -92,13 +88,9 @@ final class BmiScreenViewModel: ObservableObject {
                     bmi: bmi
                 )
             } catch {
-                if let generateAlert {
-                    self.alert = generateAlert.execute(
-                        error: error
-                    )
-                } else {
-                    self.alert = AlertItem.unableToComplete
-                }
+                self.alert = alertHelper.errorToBmiErrorAlert(
+                    error: error
+                )
             }
         } else {
             self.alert = AlertItem.unableToComplete
@@ -121,13 +113,10 @@ final class BmiScreenViewModel: ObservableObject {
                     bmi: bmi
                 )
             } catch {
-                if let generateAlert {
-                    self.alert = generateAlert.execute(
-                        error: error
-                    )
-                } else {
-                    self.alert = AlertItem.unableToComplete
-                }            }
+                self.alert = alertHelper.errorToBmiErrorAlert(
+                    error: error
+                )
+            }
         } else {
             self.alert = AlertItem.unableToComplete
         }
