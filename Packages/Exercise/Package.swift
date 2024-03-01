@@ -54,7 +54,17 @@ let package = Package(
         ),
         .target(
             name: "ExercisePresentation",
-            dependencies: ["ExerciseDomain"]
+            dependencies: [
+                "ExerciseDomain",
+                .product(
+                    name: "NetworkingDomain",
+                    package: "Networking"
+                )
+            ]
+        ),
+        .testTarget(
+            name: "ExercisePresentationTests",
+            dependencies: ["ExercisePresentation"]
         )
     ]
 )

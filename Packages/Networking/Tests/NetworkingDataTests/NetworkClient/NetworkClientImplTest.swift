@@ -8,7 +8,6 @@
 import Foundation
 import XCTest
 import NetworkingDomain
-import TestingUtils
 @testable import NetworkingData
 
 @available(

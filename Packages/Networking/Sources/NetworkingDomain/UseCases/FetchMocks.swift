@@ -6,14 +6,13 @@
 //
 
 import Foundation
-import TestingUtils
 
 @available(iOS 13.0.0, *)
 public final class MockFetchSuccess: Fetch {
     
     public init() {}
     
-    private(set) var executeCalled = false
+    public private(set) var executeCalled = false
     
     public func execute<T : Decodable>(from url: String, session: URLSession) async throws -> [T] {
         executeCalled = true
@@ -27,8 +26,8 @@ public final class MockFetchInvalidURL: Fetch {
     
     public init() {}
     
-    private(set) var executeCalled = false
-    
+    public private(set) var executeCalled = false
+
     public func execute<T : Decodable>(from url: String, session: URLSession) async throws -> [T] {
         executeCalled = true
         throw NetworkError.invalidURL
@@ -41,8 +40,8 @@ public final class MockFetchInvalidResponse: Fetch {
     
     public init() {}
     
-    private(set) var executeCalled = false
-    
+    public private(set) var executeCalled = false
+
     public func execute<T : Decodable>(from url: String, session: URLSession) async throws -> [T] {
         executeCalled = true
         throw NetworkError.invalidResponse
@@ -55,8 +54,8 @@ public final class MockFetchInvalidData: Fetch {
     
     public init() {}
     
-    private(set) var executeCalled = false
-    
+    public private(set) var executeCalled = false
+
     public func execute<T : Decodable>(from url: String, session: URLSession) async throws -> [T] {
         executeCalled = true
         throw NetworkError.invalidData

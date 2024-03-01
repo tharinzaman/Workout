@@ -12,7 +12,7 @@ public final class MockGetBmiCategorySuccess: GetBmiCategory {
     
     public init() {}
     
-    private(set) var executeCalled = false
+    public private(set) var executeCalled = false
     
     public func execute(bmi: Double) throws -> BmiCategory {
         executeCalled = true
@@ -25,8 +25,8 @@ public final class MockGetBmiCategoryFailure: GetBmiCategory {
     
     public init() {}
     
-    private(set) var executeCalled = false
-    
+    public private(set) var executeCalled = false
+
     public func execute(bmi: Double) throws -> BmiCategory {
         executeCalled = true
         throw BmiError.invalidBmiPassed

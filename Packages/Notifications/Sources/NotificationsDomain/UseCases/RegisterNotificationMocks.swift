@@ -12,7 +12,7 @@ public final class MockRegisterNotificationSuccess: RegisterNotification {
     
     public init() {}
     
-    private(set) var executeCalled = false
+    public private(set) var executeCalled = false
     
     public func execute(
         identifier: String,
@@ -30,7 +30,7 @@ public final class MockRegisterNotificationMissingPermissions: RegisterNotificat
     
     public init() {}
     
-    private(set) var executeCalled = false
+    public private(set) var executeCalled = false
     
     public func execute(
         identifier: String,
@@ -49,7 +49,7 @@ public final class MockRegisterNotificationFailedToRegisterNotif: RegisterNotifi
     
     public init() {}
     
-    private(set) var executeCalled = false
+    public private(set) var executeCalled = false
     
     public func execute(
         identifier: String,
@@ -68,7 +68,7 @@ public final class MockRegisterNotificationUnknownNotifError: RegisterNotificati
     
     public init() {}
     
-    private(set) var executeCalled = false
+    public private(set) var executeCalled = false
     
     public func execute(
         identifier: String,

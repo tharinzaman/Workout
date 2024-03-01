@@ -12,7 +12,7 @@ public final class MockGetMetricBmiSuccess: GetMetricBmi {
     
     public init() {}
     
-    private(set) var executeCalled = false
+    public private(set) var executeCalled = false
     
     public func execute(height: Double, weight: Double) throws -> Double {
         executeCalled = true
@@ -25,7 +25,7 @@ public final class MockGetMetricBmiInvalidHeight: GetMetricBmi {
     
     public init() {}
     
-    private(set) var executeCalled = false
+    public private(set) var executeCalled = false
     
     public func execute(height: Double, weight: Double) throws -> Double {
         executeCalled = true
@@ -38,7 +38,7 @@ public final class MockGetMetricBmiInvalidWeight: GetMetricBmi {
     
     public init() {}
     
-    private(set) var executeCalled = false
+    public private(set) var executeCalled = false
     
     public func execute(height: Double, weight: Double) throws -> Double {
         executeCalled = true

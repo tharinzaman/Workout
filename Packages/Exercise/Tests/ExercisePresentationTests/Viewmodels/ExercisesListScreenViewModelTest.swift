@@ -1,35 +1,63 @@
 //
 //  ExercisesListScreenViewModelTest.swift
-//  
+//
 //
 //  Created by Tharin Zaman on 01/03/2024.
 //
 
 import XCTest
+import NetworkingDomain
+@testable import ExercisePresentation
 
+@available(iOS 13.0.0, *)
 final class ExercisesListScreenViewModelTest: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    func test_fetchExercises_success() async {
+        // ASSIGN
+        let fetch = MockFetchSuccess()
+        let helper = MockAlertHelperSuccess()
+        let vm = ExercisesListScreenViewModel(
+            fetch: fetch,
+            alertHelper: helper
+        )
+        // ACT
+        await vm.fetchExercises()
+        // ASSERT
+        XCTAssertFalse(vm.exercises.isEmpty)
+        XCTAssertNil(vm.alert)
+        XCTAssertTrue(fetch.executeCalled)
+        XCTAssertTrue(helper.errorToBmiAlertCalled)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func test_fetchExercises_errorThrown() async {
+        // ASSIGN
+        let fetch = MockFetchInvalidResponse()
+        let helper = MockAlertHelperSuccess()
+        let vm = ExercisesListScreenViewModel(
+            fetch: fetch,
+            alertHelper: helper
+        )
+        // ACT
+        await vm.fetchExercises()
+        // ASSERT
+        XCTAssertTrue(vm.exercises.isEmpty)
+        XCTAssertEqual(vm.alert?.message, AlertItem.badResponse.message)
+        XCTAssertTrue(fetch.executeCalled)
+        XCTAssertTrue(helper.errorToBmiAlertCalled)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func test_fetchExercises_fetchUseCaseNil() async {
+        // ASSIGN
+        let helper = MockAlertHelperSuccess()
+        let vm = ExercisesListScreenViewModel(
+            fetch: nil,
+            alertHelper: helper
+        )
+        // ACT
+        await vm.fetchExercises()
+        // ASSERT
+        XCTAssertTrue(vm.exercises.isEmpty)
+        XCTAssertEqual(vm.alert?.message, AlertItem.unableToFetchExercises.message)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
+    
 }

@@ -20,7 +20,8 @@ final class MockAlertHelperSuccess: AlertHelper {
             AlertItem.unableToComplete
         } else {
             AlertItem.invalidHeight
-        }    }
+        }
+    }
 }
 
 @available(iOS 13.0, *)

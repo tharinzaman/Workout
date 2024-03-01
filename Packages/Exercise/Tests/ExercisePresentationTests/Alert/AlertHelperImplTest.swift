@@ -1,35 +1,88 @@
 //
 //  AlertHelperImplTest.swift
-//  
+//
 //
 //  Created by Tharin Zaman on 01/03/2024.
 //
 
 import XCTest
+import ExerciseDomain
+import NetworkingDomain
+@testable import ExercisePresentation
 
+@available(
+    iOS 13.0,
+    *
+)
 final class AlertHelperImplTest: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    private var alertHelper: AlertHelper!
+    
+    override func setUp() {
+        alertHelper = AlertHelperImpl()
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    override func tearDown() {
+        alertHelper = nil
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func test_badURLError_success() {
+        // ASSIGN
+        let expectedResult = AlertItem.badUrl
+        // ACT
+        let result = alertHelper.errorToWorkoutErrorAlert(
+            error: NetworkError.invalidURL
+        )
+        // ASSERT
+        XCTAssertEqual(
+            expectedResult.message,
+            result.message
+        )
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_badResponseError_success() {
+        // ASSIGN
+        let expectedResult = AlertItem.badResponse
+        // ACT
+        let result = alertHelper.errorToWorkoutErrorAlert(
+            error: NetworkError.invalidResponse
+        )
+        // ASSERT
+        XCTAssertEqual(
+            expectedResult.message,
+            result.message
+        )
     }
-
+    
+    func test_badDataError_success() {
+        // ASSIGN
+        let expectedResult = AlertItem.badData
+        // ACT
+        let result = alertHelper.errorToWorkoutErrorAlert(
+            error: NetworkError.invalidData
+        )
+        // ASSERT
+        XCTAssertEqual(
+            expectedResult.message,
+            result.message
+        )
+    }
+    
+    func test_otherError_success() {
+        // ASSIGN
+        let expectedResult = AlertItem.unableToFetchExercises
+        // ACT
+        let result = alertHelper.errorToWorkoutErrorAlert(
+            error: URLError(
+                .badURL
+            )
+        )
+        
+        // ASSERT
+        XCTAssertEqual(
+            expectedResult.message,
+            result.message
+        )
+    }
+    
 }

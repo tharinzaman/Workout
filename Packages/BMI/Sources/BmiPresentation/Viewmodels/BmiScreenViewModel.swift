@@ -63,7 +63,6 @@ final class BmiScreenViewModel: ObservableObject {
         } else {
             self.alert = AlertItem.unableToComplete
         }
-        
     }
     
     func calculateImperialBmi() {

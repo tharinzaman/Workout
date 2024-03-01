@@ -12,7 +12,7 @@ public final class MockGetImperialBmiSuccess: GetImperialBmi {
     
     public init() {}
     
-    private(set) var executeCalled = false
+    public private(set) var executeCalled = false
     
     public func execute(weight: Double, feet: Int, inches: Int) throws -> Double {
         executeCalled = true
@@ -25,8 +25,8 @@ public final class MockGetImperialBmiInvalidHeight: GetImperialBmi {
     
     public init() {}
     
-    private(set) var executeCalled = false
-    
+    public private(set) var executeCalled = false
+
     public func execute(weight: Double, feet: Int, inches: Int) throws -> Double {
         executeCalled = true
         throw BmiError.invalidHeightPassed
@@ -38,8 +38,8 @@ public final class MockGetImperialBmiInvalidWeight: GetImperialBmi {
     
     public init() {}
     
-    private(set) var executeCalled = false
-    
+    public private(set) var executeCalled = false
+
     public func execute(weight: Double, feet: Int, inches: Int) throws -> Double {
         executeCalled = true
         throw BmiError.invalidWeightPassed
