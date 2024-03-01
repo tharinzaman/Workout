@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import BmiDomain
+import BmiPresentation
 
 @available(iOS 13.0, *)
 final class MockAlertHelperSuccess: AlertHelper {
