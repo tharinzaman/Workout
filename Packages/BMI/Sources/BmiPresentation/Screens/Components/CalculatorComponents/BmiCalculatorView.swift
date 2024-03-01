@@ -15,7 +15,7 @@ struct BmiCalculatorView: View {
     
     @ObservedObject var vm: BmiScreenViewModel
     
-    public init(
+    init(
         vm: BmiScreenViewModel
     ) {
         self.vm = vm

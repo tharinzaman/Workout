@@ -16,7 +16,7 @@ struct BmiResultView: View {
     
     @ObservedObject var vm: BmiScreenViewModel
     
-    public init(vm: BmiScreenViewModel) {
+    init(vm: BmiScreenViewModel) {
         self.vm = vm
     }
     

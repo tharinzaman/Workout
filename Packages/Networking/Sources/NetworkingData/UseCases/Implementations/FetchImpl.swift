@@ -8,7 +8,10 @@
 import Foundation
 import NetworkingDomain
 
-@available(iOS 13.0.0, *)
+@available(
+    iOS 13.0.0,
+    *
+)
 internal struct FetchImpl: Fetch {
     
     private let client: NetworkClient

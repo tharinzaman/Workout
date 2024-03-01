@@ -29,12 +29,35 @@ public struct ExercisesListScreen: View {
     }
     
     public var body: some View {
-        if vm.areExercisesLoading {
-            LoadingScreen()
-        } else {
+        ZStack {
             NavigationStack {
-                
+                List(
+                    vm.exercises
+                ) { exercise in
+                    ExerciseButton(
+                        exercise: exercise
+                    )
+                }
+                .navigationTitle(
+                    "🏋️ Workout"
+                )
+                .listStyle(
+                    .plain
+                )
+            }.task {
+                await vm.fetchExercises()
             }
+            if vm.areExercisesLoading {
+                LoadingScreen()
+            }
+        }.alert(
+            item: $vm.alert
+        ) { alertItem in
+            Alert(
+                title: alertItem.title,
+                message: alertItem.message,
+                dismissButton: alertItem.dismissButton
+            )
         }
     }
 }

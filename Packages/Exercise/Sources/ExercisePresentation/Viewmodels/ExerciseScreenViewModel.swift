@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+@available(iOS 13.0, *)
+final class ExerciseScreenViewModel: ObservableObject {
+    
+    @Published var shouldPresentExercise: Bool = false
+}

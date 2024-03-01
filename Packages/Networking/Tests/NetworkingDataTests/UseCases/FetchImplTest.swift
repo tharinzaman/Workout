@@ -22,7 +22,7 @@ final class FetchImplTest: XCTestCase {
             client: client
         )
         // ACT
-        let result: [Exercise] = try await fetch.execute(
+        let result: [NetworkingEntity] = try await fetch.execute(
             from: "",
             session: .shared
         )
@@ -40,7 +40,7 @@ final class FetchImplTest: XCTestCase {
         )
         // ACT
         do {
-            let _: [Exercise] =
+            let _: [NetworkingEntity] =
             try await fetch.execute(
                     from: "",
                     session: .shared
@@ -68,7 +68,7 @@ final class FetchImplTest: XCTestCase {
         )
         // ACT
         do {
-            let _: [Exercise] =
+            let _: [NetworkingEntity] =
             try await fetch.execute(
                     from: "",
                     session: .shared
@@ -96,7 +96,7 @@ final class FetchImplTest: XCTestCase {
         )
         // ACT
         do {
-            let _: [Exercise] =
+            let _: [NetworkingEntity] =
             try await fetch.execute(
                     from: "",
                     session: .shared

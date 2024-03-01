@@ -12,13 +12,13 @@ import NetworkingDomain
 internal struct NetworkClientImpl: NetworkClient {
     
     func fetch<T : Decodable>(from url: String, session: URLSession) async throws -> [T] {
-        
+                
         guard let url = URL(
             string: url
         ) else {
             throw NetworkError.invalidURL
         }
-        
+    
         let (
             data,
             response

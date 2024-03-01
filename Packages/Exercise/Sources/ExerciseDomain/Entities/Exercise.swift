@@ -7,10 +7,16 @@
 
 import Foundation
 
-public struct Exercise: Decodable, Equatable {
+public struct Exercise: Decodable, Identifiable, Equatable {
     
-    let exercise: String
-    let description: String
-    let bodyPart: String
+//    public var id: UUID = UUID()
+    
+    public let exercise: String
+    public let description: String
+    public let bodyPart: String
+    
+    public var id: UUID {
+        return UUID()
+    }
     
 }

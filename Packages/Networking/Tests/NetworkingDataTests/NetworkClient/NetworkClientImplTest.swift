@@ -56,11 +56,11 @@ class NetworkClientImplTest: XCTestCase {
                 data
             )
         }
-        let expectedResult: [Exercise] = StaticLoader.loadJSONFromFileReturnDecodedData(
+        let expectedResult: [NetworkingEntity] = StaticLoader.loadJSONFromFileReturnDecodedData(
             file: "MockNetworkResponse"
         )
         // ACT
-        let result: [Exercise] = try await client.fetch(
+        let result: [NetworkingEntity] = try await client.fetch(
             from: urlString,
             session: self.session
         )
@@ -83,7 +83,7 @@ class NetworkClientImplTest: XCTestCase {
         }
         // ACT
         do {
-            let _: [Exercise] = try await client.fetch(
+            let _: [NetworkingEntity] = try await client.fetch(
                 from: urlString,
                 session: self.session
             )
@@ -119,7 +119,7 @@ class NetworkClientImplTest: XCTestCase {
         }
         // ACT
         do {
-            let _: [Exercise] = try await client.fetch(
+            let _: [NetworkingEntity] = try await client.fetch(
                 from: urlString,
                 session: self.session
             )
@@ -154,7 +154,7 @@ class NetworkClientImplTest: XCTestCase {
         }
         // ACT
         do {
-            let _: [Exercise] = try await client.fetch(
+            let _: [NetworkingEntity] = try await client.fetch(
                 from: urlString,
                 session: self.session
             )

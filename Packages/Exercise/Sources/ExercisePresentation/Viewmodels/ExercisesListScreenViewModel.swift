@@ -7,6 +7,7 @@
 
 import Foundation
 import NetworkingDomain
+import ExerciseDomain
 
 @available(
     iOS 13.0,
@@ -17,7 +18,7 @@ final class ExercisesListScreenViewModel: ObservableObject {
     private let fetch: Fetch?
     private let alertHelper: AlertHelper
     
-    private let urlString = "https://github.com/terrenjpeterson/workout-planner/blob/master/exercises.json"
+    private let urlString = "https://raw.githubusercontent.com/terrenjpeterson/workout-planner/master/exercises.json"
     
     init(
         fetch: Fetch?,
@@ -31,6 +32,7 @@ final class ExercisesListScreenViewModel: ObservableObject {
     @Published var alert: AlertModel? = nil
     @Published var areExercisesLoading: Bool = false
     
+    @MainActor
     func fetchExercises() async {
         areExercisesLoading = true
         if let fetch {
