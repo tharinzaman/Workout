@@ -6,12 +6,12 @@
 //
 
 import SwiftUI
-import BmiPresentation
+import ExercisePresentation
 
 struct TestView: View {
         
     var body: some View {
-        BmiScreen()
+        ExercisesListScreen()
     }
     
 }

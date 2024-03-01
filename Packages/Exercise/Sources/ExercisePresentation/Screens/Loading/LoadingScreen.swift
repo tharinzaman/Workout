@@ -7,12 +7,18 @@
 
 import SwiftUI
 
-struct SwiftUIView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+@available(iOS 14.0.0, *)
+public struct LoadingScreen: View {
+    
+    public init() {}
+    
+    public var body: some View {
+        ZStack {
+            Color(.systemBackground)
+                .ignoresSafeArea()
+            ProgressView()
+                .progressViewStyle(CircularProgressViewStyle(tint: .green))
+        }
     }
 }
 
-#Preview {
-    SwiftUIView()
-}

@@ -11,6 +11,9 @@
 		E12AA5172B90A44300EFD62C /* BmiDomain in Frameworks */ = {isa = PBXBuildFile; productRef = E12AA5162B90A44300EFD62C /* BmiDomain */; };
 		E12AA5192B90A44300EFD62C /* BmiPresentation in Frameworks */ = {isa = PBXBuildFile; productRef = E12AA5182B90A44300EFD62C /* BmiPresentation */; };
 		E12F92982B8C9442007F8ED8 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12F92972B8C9441007F8ED8 /* Item.swift */; };
+		E15242202B91F42B00AF6E3E /* ExerciseData in Frameworks */ = {isa = PBXBuildFile; productRef = E152421F2B91F42B00AF6E3E /* ExerciseData */; };
+		E15242222B91F42B00AF6E3E /* ExerciseDomain in Frameworks */ = {isa = PBXBuildFile; productRef = E15242212B91F42B00AF6E3E /* ExerciseDomain */; };
+		E15242242B91F42B00AF6E3E /* ExercisePresentation in Frameworks */ = {isa = PBXBuildFile; productRef = E15242232B91F42B00AF6E3E /* ExercisePresentation */; };
 		E159909E2B8A279E00D54091 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E159909D2B8A279E00D54091 /* Assets.xcassets */; };
 		E15990A12B8A279E00D54091 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E15990A02B8A279E00D54091 /* Preview Assets.xcassets */; };
 		E15990CA2B8BA00200D54091 /* WorkoutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15990C92B8BA00200D54091 /* WorkoutApp.swift */; };
@@ -57,8 +60,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E15242222B91F42B00AF6E3E /* ExerciseDomain in Frameworks */,
 				E12AA5192B90A44300EFD62C /* BmiPresentation in Frameworks */,
+				E15242242B91F42B00AF6E3E /* ExercisePresentation in Frameworks */,
 				E12AA5152B90A44300EFD62C /* BmiData in Frameworks */,
+				E15242202B91F42B00AF6E3E /* ExerciseData in Frameworks */,
 				E12AA5172B90A44300EFD62C /* BmiDomain in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,6 +163,9 @@
 				E12AA5142B90A44300EFD62C /* BmiData */,
 				E12AA5162B90A44300EFD62C /* BmiDomain */,
 				E12AA5182B90A44300EFD62C /* BmiPresentation */,
+				E152421F2B91F42B00AF6E3E /* ExerciseData */,
+				E15242212B91F42B00AF6E3E /* ExerciseDomain */,
+				E15242232B91F42B00AF6E3E /* ExercisePresentation */,
 			);
 			productName = Workout;
 			productReference = E152421B2B91CA7A00AF6E3E /* Workout.app */;
@@ -233,6 +242,7 @@
 			mainGroup = E159908B2B8A279900D54091;
 			packageReferences = (
 				E12AA5132B90A44300EFD62C /* XCLocalSwiftPackageReference "Packages/BMI" */,
+				E152421E2B91F42B00AF6E3E /* XCLocalSwiftPackageReference "Packages/Exercise" */,
 			);
 			productRefGroup = E159908B2B8A279900D54091;
 			projectDirPath = "";
@@ -615,6 +625,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/BMI;
 		};
+		E152421E2B91F42B00AF6E3E /* XCLocalSwiftPackageReference "Packages/Exercise" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/Exercise;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -629,6 +643,18 @@
 		E12AA5182B90A44300EFD62C /* BmiPresentation */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = BmiPresentation;
+		};
+		E152421F2B91F42B00AF6E3E /* ExerciseData */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ExerciseData;
+		};
+		E15242212B91F42B00AF6E3E /* ExerciseDomain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ExerciseDomain;
+		};
+		E15242232B91F42B00AF6E3E /* ExercisePresentation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ExercisePresentation;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

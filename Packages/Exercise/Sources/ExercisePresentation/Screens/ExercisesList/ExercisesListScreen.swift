@@ -1,18 +1,40 @@
 //
 //  SwiftUIView.swift
-//  
+//
 //
 //  Created by Tharin Zaman on 01/03/2024.
 //
 
 import SwiftUI
+import NetworkingData
+import NetworkingDomain
 
-struct SwiftUIView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+@available(
+    iOS 16.0.0,
+    *
+)
+public struct ExercisesListScreen: View {
+    
+    @StateObject var vm: ExercisesListScreenViewModel
+    
+    public init() {
+        _vm = StateObject(
+            wrappedValue: ExercisesListScreenViewModel(
+                fetch: NetworkingResolver.shared.resolve(
+                    Fetch.self
+                ),
+                alertHelper: AlertHelperImpl()
+            )
+        )
     }
-}
-
-#Preview {
-    SwiftUIView()
+    
+    public var body: some View {
+        if vm.areExercisesLoading {
+            LoadingScreen()
+        } else {
+            NavigationStack {
+                
+            }
+        }
+    }
 }
