@@ -18,20 +18,9 @@ struct CalculateButton: View {
     var body: some View {
         Button {
             if vm.isMetric {
-                vm.getMetricBmi(
-                    height: Double(
-                        vm.height
-                    ) ?? -1,
-                    weight: Double(
-                        vm.weight
-                    ) ?? -1
-                )
+                vm.calculateMetricBmi()
             } else {
-                vm.getImperialBmi(
-                    weight: Double(vm.weight) ?? -1,
-                    feet: Int(vm.height) ?? -1,
-                    inches: Int(vm.inches) ?? -1
-                )
+                vm.calculateImperialBmi()
             }
         } label: {
             Text(

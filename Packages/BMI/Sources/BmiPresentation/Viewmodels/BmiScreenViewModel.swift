@@ -42,15 +42,12 @@ final class BmiScreenViewModel: ObservableObject {
         self.alertHelper = alertHelper
     }
     
-    func getMetricBmi(
-        height: Double,
-        weight: Double
-    ) {
+    func calculateMetricBmi() {
         if let getMetricBmi {
             do {
                 let bmi = try getMetricBmi.execute(
-                    height: height,
-                    weight: weight
+                    height: Double(self.height) ?? -1,
+                    weight: Double(self.weight) ?? -1
                 )
                 self.bmi = String(
                     bmi
@@ -69,17 +66,21 @@ final class BmiScreenViewModel: ObservableObject {
         
     }
     
-    func getImperialBmi(
-        weight: Double,
-        feet: Int,
-        inches: Int
-    ) {
+    func calculateImperialBmi() {
         if let getImperialBmi {
             do {
+                guard let inches = Int(self.inches) else {
+                    self.alert = AlertItem.invalidHeight
+                    return
+                }
+                guard inches >= 0 && inches <= 12 else {
+                    self.alert = AlertItem.invalidHeight
+                    return
+                }
                 let bmi = try getImperialBmi.execute(
-                    weight: weight,
-                    feet: feet,
-                    inches: inches
+                    weight: Double(self.weight) ?? -1,
+                    feet: Int(self.height) ?? -1,
+                    inches: Int(self.inches) ?? -1
                 )
                 self.bmi = String(
                     bmi

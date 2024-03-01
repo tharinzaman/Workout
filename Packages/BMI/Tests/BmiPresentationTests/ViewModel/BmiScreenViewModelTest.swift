@@ -45,13 +45,10 @@ final class BmiScreenViewModelTest: XCTestCase {
         vm = nil
     }
     
-    func test_generateMetricBmiSuccess() {
+    func test_calculateMetricBmiSuccess() {
         // ASSIGN
         // ACT
-        vm.getMetricBmi(
-            height: 153,
-            weight: 57
-        )
+        vm.calculateMetricBmi()
         // ASSERT
         XCTAssertEqual(
             vm.bmi,
@@ -66,7 +63,7 @@ final class BmiScreenViewModelTest: XCTestCase {
         )
     }
     
-    func test_generateMetricBmi_errorThrown() {
+    func test_calculateMetricBmi_errorThrown() {
         // ASSIGN
         vm = BmiScreenViewModel(
             getBmiCategory: self.getBmiCategory,
@@ -75,10 +72,7 @@ final class BmiScreenViewModelTest: XCTestCase {
             alertHelper: self.alertHelper
         )
         // ACT
-        vm.getMetricBmi(
-            height: 153,
-            weight: 57
-        )
+        vm.calculateMetricBmi()
         // ASSERT
         XCTAssertEqual(
             vm.alert?.message,
@@ -92,7 +86,7 @@ final class BmiScreenViewModelTest: XCTestCase {
         )
     }
     
-    func test_generateMetricBmi_useCaseNil() {
+    func test_calculateMetricBmi_useCaseNil() {
         // ASSIGN
         vm = BmiScreenViewModel(
             getBmiCategory: self.getBmiCategory,
@@ -101,10 +95,7 @@ final class BmiScreenViewModelTest: XCTestCase {
             alertHelper: self.alertHelper
         )
         // ACT
-        vm.getMetricBmi(
-            height: 153,
-            weight: 57
-        )
+        vm.calculateMetricBmi()
         // ASSERT
         XCTAssertEqual(
             vm.alert?.message,
@@ -118,14 +109,11 @@ final class BmiScreenViewModelTest: XCTestCase {
         )
     }
     
-    func test_generateImperialBmiSuccess() {
+    func test_calculateImperialBmiSuccess() {
         // ASSIGN
+        vm.inches = "3"
         // ACT
-        vm.getImperialBmi(
-            weight: 125,
-            feet: 5,
-            inches: 0
-        )
+        vm.calculateImperialBmi()
         // ASSERT
         XCTAssertEqual(
             vm.bmi,
@@ -140,7 +128,7 @@ final class BmiScreenViewModelTest: XCTestCase {
         )
     }
     
-    func test_generateImperialBmi_errorThrown() {
+    func test_calculateImperialBmi_errorThrown() {
         // ASSIGN
         vm = BmiScreenViewModel(
             getBmiCategory: self.getBmiCategory,
@@ -149,11 +137,7 @@ final class BmiScreenViewModelTest: XCTestCase {
             alertHelper: self.alertHelper
         )
         // ACT
-        vm.getImperialBmi(
-            weight: 125,
-            feet: 5,
-            inches: 0
-        )
+        vm.calculateImperialBmi()
         // ASSERT
         XCTAssertEqual(
             vm.alert?.message,
@@ -167,7 +151,61 @@ final class BmiScreenViewModelTest: XCTestCase {
         )
     }
     
-    func test_generateImperialBmi_useCaseNil() {
+    func test_calculateImperialBmi_noInchesPassed() {
+        // ASSIGN
+        vm.inches = ""
+        // ACT
+        vm.calculateImperialBmi()
+        // ASSERT
+        XCTAssertNil(
+            vm.bmi
+        )
+        XCTAssertNil(
+            vm.bmiCategory
+        )
+        XCTAssertEqual(
+            vm.alert?.message,
+            AlertItem.invalidHeight.message
+        )
+    }
+    
+    func test_calculateImperialBmi_inchesLessThanZero() {
+        // ASSIGN
+        vm.inches = "-1"
+        // ACT
+        vm.calculateImperialBmi()
+        // ASSERT
+        XCTAssertNil(
+            vm.bmi
+        )
+        XCTAssertNil(
+            vm.bmiCategory
+        )
+        XCTAssertEqual(
+            vm.alert?.message,
+            AlertItem.invalidHeight.message
+        )
+    }
+    
+    func test_calculateImoerialBmi_inchesMoreThanTwelve() {
+        // ASSIGN
+        vm.inches = "13"
+        // ACT
+        vm.calculateImperialBmi()
+        // ASSERT
+        XCTAssertNil(
+            vm.bmi
+        )
+        XCTAssertNil(
+            vm.bmiCategory
+        )
+        XCTAssertEqual(
+            vm.alert?.message,
+            AlertItem.invalidHeight.message
+        )
+    }
+    
+    func test_calculateImperialBmi_useCaseNil() {
         // ASSIGN
         vm = BmiScreenViewModel(
             getBmiCategory: self.getBmiCategory,
@@ -176,11 +214,7 @@ final class BmiScreenViewModelTest: XCTestCase {
             alertHelper: self.alertHelper
         )
         // ACT
-        vm.getImperialBmi(
-            weight: 125,
-            feet: 5,
-            inches: 0
-        )
+        vm.calculateImperialBmi()
         // ASSERT
         XCTAssertEqual(
             vm.alert?.message,
@@ -203,10 +237,7 @@ final class BmiScreenViewModelTest: XCTestCase {
             alertHelper: self.alertHelper
         )
         // ACT
-        vm.getMetricBmi(
-            height: 153,
-            weight: 57
-        )
+        vm.calculateMetricBmi()
         // ASSERT
         XCTAssertEqual(
             vm.bmi,
@@ -230,10 +261,7 @@ final class BmiScreenViewModelTest: XCTestCase {
             alertHelper: self.alertHelper
         )
         // ACT
-        vm.getMetricBmi(
-            height: 153,
-            weight: 57
-        )
+        vm.calculateMetricBmi()
         // ASSERT
         XCTAssertEqual(
             vm.bmi,
@@ -247,5 +275,5 @@ final class BmiScreenViewModelTest: XCTestCase {
             vm.bmiCategory
         )
     }
-
+    
 }
