@@ -27,11 +27,19 @@ struct ExerciseScreen: View {
     }
     
     var body: some View {
-        VStack(alignment: .center) {
+        VStack(
+            alignment: .center
+        ) {
             ExerciseTextView(
                 exercise: exercise
             )
-            WorkoutActionButtonsView(vm: vm)
+            WorkoutActionButtonsView(
+                vm: vm
+            )
+            TimerView(
+                vm: vm
+            )
+            .padding(.top)
         }
     }
     

@@ -29,7 +29,7 @@ struct ExerciseButton: View {
     
     var body: some View {
         Button {
-            vm.shouldPresentExercise.toggle()
+            vm.shouldPresentExercise = true
         } label: {
             Text(
                 exercise.exercise.capitalized
