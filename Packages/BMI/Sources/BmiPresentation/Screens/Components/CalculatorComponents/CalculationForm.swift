@@ -29,7 +29,9 @@ struct CalculationForm: View {
                 TextField(
                     vm.isMetric ? "Height (cm)" : "Height (ft)",
                     text: $vm.height
-                ).focused(
+                )
+                .keyboardType(.decimalPad)
+                .focused(
                     $focusedTextField,
                     equals: .height
                 )
@@ -43,7 +45,9 @@ struct CalculationForm: View {
                     TextField(
                         "Inches",
                         text: $vm.inches
-                    ).focused(
+                    )
+                    .keyboardType(.decimalPad)
+                    .focused(
                         $focusedTextField,
                         equals: .inches
                     )
@@ -63,7 +67,9 @@ struct CalculationForm: View {
                 TextField(
                     vm.isMetric ? "Weight (kg)" : "Weight (lbs)",
                     text: $vm.weight
-                ).focused(
+                )
+                .keyboardType(.decimalPad)
+                .focused(
                     $focusedTextField,
                     equals: .weight
                 )

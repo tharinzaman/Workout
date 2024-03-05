@@ -31,7 +31,7 @@ struct TimerView: View {
                     .green
                 )
             Text(
-                "\(vm.durationToString(vm.workoutHours)):\(vm.durationToString(vm.workoutMinutes)):\(vm.durationToString(vm.workoutSeconds))"
+                "\(vm.workoutHours.durationToString()):\(vm.workoutMinutes.durationToString()):\(vm.workoutSeconds.durationToString())"
             )
             .font(
                 .title3

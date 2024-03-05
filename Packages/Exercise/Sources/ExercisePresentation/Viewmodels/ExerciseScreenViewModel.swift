@@ -50,14 +50,6 @@ final class ExerciseScreenViewModel: ObservableObject {
         resetTime()
     }
     
-    func durationToString(_ duration: Int) -> String {
-        if duration < 10 {
-            return "0\(duration)"
-        } else {
-            return String(duration)
-        }
-    }
-    
     private func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) {_ in
             if self.workoutSeconds == 59 {

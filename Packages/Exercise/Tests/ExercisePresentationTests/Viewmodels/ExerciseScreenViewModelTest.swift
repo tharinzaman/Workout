@@ -6,30 +6,67 @@
 //
 
 import XCTest
+@testable import ExercisePresentation
 
+@available(iOS 13.0, *)
 final class ExerciseScreenViewModelTest: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    private var vm: ExerciseScreenViewModel!
+    
+    override func setUp() {
+        vm = ExerciseScreenViewModel()
+    }
+    
+    override func tearDown() {
+        vm = nil
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func test_startWorkout_success() {
+        // ASSIGN
+        // ACT
+        vm.startWorkout()
+        // ASSERT
+        XCTAssertTrue(vm.workoutStarted)
+        XCTAssertTrue(vm.workoutRunning)
+        XCTAssertFalse(vm.workoutPaused)
+        XCTAssertFalse(vm.workoutEnded)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func test_pauseWorkout_success() {
+        // ASSIGN
+        // ACT
+        vm.startWorkout()
+        vm.pauseWorkout()
+        // ASSERT
+        XCTAssertTrue(vm.workoutStarted)
+        XCTAssertFalse(vm.workoutRunning)
+        XCTAssertTrue(vm.workoutPaused)
+        XCTAssertFalse(vm.workoutEnded)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func test_resumeWorkout_success() {
+        // ASSIGN
+        // ACT
+        vm.startWorkout()
+        vm.pauseWorkout()
+        vm.resumeWorkout()
+        // ASSERT
+        XCTAssertTrue(vm.workoutStarted)
+        XCTAssertTrue(vm.workoutRunning)
+        XCTAssertFalse(vm.workoutPaused)
+        XCTAssertFalse(vm.workoutEnded)
+    }
+    
+    func test_endWorkout_success() {
+        // ASSIGN
+        // ACT
+        vm.startWorkout()
+        vm.endWorkout()
+        // ASSERT
+        XCTAssertFalse(vm.workoutStarted)
+        XCTAssertFalse(vm.workoutRunning)
+        XCTAssertFalse(vm.workoutPaused)
+        XCTAssertTrue(vm.workoutEnded)
     }
 
 }
