@@ -19,6 +19,7 @@
 		E15990CA2B8BA00200D54091 /* WorkoutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15990C92B8BA00200D54091 /* WorkoutApp.swift */; };
 		E15990CE2B8BA05800D54091 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15990CC2B8BA05700D54091 /* WelcomeScreen.swift */; };
 		E162BE1D2B8FA2DA00170E63 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E162BE1C2B8FA2DA00170E63 /* TestView.swift */; };
+		E19C4C362B979EE90078A19C /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19C4C352B979EE90078A19C /* TabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +46,15 @@
 		E12F92902B8C85D8007F8ED8 /* History */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = History; sourceTree = "<group>"; };
 		E12F92912B8C85D8007F8ED8 /* Notifications */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Notifications; sourceTree = "<group>"; };
 		E12F92972B8C9441007F8ED8 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		E152421B2B91CA7A00AF6E3E /* Workout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Workout.app; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/Workout.app"; sourceTree = "<absolute>"; };
-		E152421C2B91CA7A00AF6E3E /* WorkoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WorkoutTests.xctest; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/WorkoutTests.xctest"; sourceTree = "<absolute>"; };
-		E152421D2B91CA7A00AF6E3E /* WorkoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WorkoutUITests.xctest; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/WorkoutUITests.xctest"; sourceTree = "<absolute>"; };
 		E159909D2B8A279E00D54091 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E15990A02B8A279E00D54091 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E15990C92B8BA00200D54091 /* WorkoutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutApp.swift; sourceTree = "<group>"; };
 		E15990CC2B8BA05700D54091 /* WelcomeScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 		E162BE1C2B8FA2DA00170E63 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		E19C4C312B97971C0078A19C /* Workout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Workout.app; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/Workout.app"; sourceTree = "<absolute>"; };
+		E19C4C322B97971C0078A19C /* WorkoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WorkoutTests.xctest; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/WorkoutTests.xctest"; sourceTree = "<absolute>"; };
+		E19C4C332B97971C0078A19C /* WorkoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WorkoutUITests.xctest; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/WorkoutUITests.xctest"; sourceTree = "<absolute>"; };
+		E19C4C352B979EE90078A19C /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		E15990962B8A279900D54091 /* Workout */ = {
 			isa = PBXGroup;
 			children = (
+				E19C4C342B979EC70078A19C /* Tab */,
 				E12F92972B8C9441007F8ED8 /* Item.swift */,
 				E15990CC2B8BA05700D54091 /* WelcomeScreen.swift */,
 				E15990C92B8BA00200D54091 /* WorkoutApp.swift */,
@@ -143,6 +146,14 @@
 			path = WorkoutUITests;
 			sourceTree = "<group>";
 		};
+		E19C4C342B979EC70078A19C /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				E19C4C352B979EE90078A19C /* TabView.swift */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -168,7 +179,7 @@
 				E15242232B91F42B00AF6E3E /* ExercisePresentation */,
 			);
 			productName = Workout;
-			productReference = E152421B2B91CA7A00AF6E3E /* Workout.app */;
+			productReference = E19C4C312B97971C0078A19C /* Workout.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E15990A52B8A279F00D54091 /* WorkoutTests */ = {
@@ -186,7 +197,7 @@
 			);
 			name = WorkoutTests;
 			productName = WorkoutTests;
-			productReference = E152421C2B91CA7A00AF6E3E /* WorkoutTests.xctest */;
+			productReference = E19C4C322B97971C0078A19C /* WorkoutTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		E15990AF2B8A279F00D54091 /* WorkoutUITests */ = {
@@ -204,7 +215,7 @@
 			);
 			name = WorkoutUITests;
 			productName = WorkoutUITests;
-			productReference = E152421D2B91CA7A00AF6E3E /* WorkoutUITests.xctest */;
+			productReference = E19C4C332B97971C0078A19C /* WorkoutUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -286,6 +297,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E19C4C362B979EE90078A19C /* TabView.swift in Sources */,
 				E162BE1D2B8FA2DA00170E63 /* TestView.swift in Sources */,
 				E15990CA2B8BA00200D54091 /* WorkoutApp.swift in Sources */,
 				E12F92982B8C9442007F8ED8 /* Item.swift in Sources */,

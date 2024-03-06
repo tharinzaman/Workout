@@ -26,7 +26,8 @@ struct WorkoutApp: App {
     var body: some Scene {
         WindowGroup {
 //            WelcomeScreen()
-            TestView()
+//            TestView()
+            WorkoutTabView()
         }
         .modelContainer(sharedModelContainer)
     }

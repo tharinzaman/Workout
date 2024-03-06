@@ -9,26 +9,26 @@ import SwiftUI
 import ExerciseDomain
 
 @available(
-    iOS 15.0.0,
+    iOS 16.0.0,
     *
 )
 struct ExerciseButton: View {
     
-    @StateObject var vm: ExerciseScreenViewModel
+    @ObservedObject var vm: ExerciseScreenViewModel
     
     private let exercise: Exercise
     
     init(
-        exercise: Exercise
+        exercise: Exercise,
+        vm: ExerciseScreenViewModel
     ) {
         self.exercise = exercise
-        _vm = StateObject(
-            wrappedValue: ExerciseScreenViewModel()
-        )
+        self.vm = vm
     }
     
     var body: some View {
         Button {
+            vm.selectedExercise = exercise
             vm.shouldPresentExercise = true
         } label: {
             Text(
@@ -53,16 +53,6 @@ struct ExerciseButton: View {
         .tint(
             .green
         )
-        .sheet(
-            isPresented: $vm.shouldPresentExercise
-        ) {
-            vm.endWorkout()
-        } content: {
-            ExerciseScreen(
-                vm: self.vm,
-                exercise: self.exercise
-            )
-        }
     }
 }
 

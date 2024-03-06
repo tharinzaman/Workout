@@ -6,13 +6,30 @@
 //
 
 import SwiftUI
+import ExercisePresentation
+import BmiPresentation
 
-struct TabView: View {
+struct WorkoutTabView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            ExercisesListScreen()
+                .tabItem {
+                    Label(
+                        "Exercise",
+                        systemImage: "dumbbell.fill"
+                    )
+                }
+            BmiScreen()
+                .tabItem {
+                    Label(
+                        "BMI",
+                        systemImage: "figure"
+                    )
+                }
+        }
     }
 }
 
 #Preview {
-    TabView()
+    WorkoutTabView()
 }

@@ -15,16 +15,20 @@ import NetworkingDomain
 )
 public struct ExercisesListScreen: View {
     
-    @StateObject var vm: ExercisesListScreenViewModel
+    @StateObject var exercisesListScreenVm: ExercisesListScreenViewModel
+    @StateObject var exerciseScreenVm: ExerciseScreenViewModel
     
     public init() {
-        _vm = StateObject(
+        _exercisesListScreenVm = StateObject(
             wrappedValue: ExercisesListScreenViewModel(
                 fetch: NetworkingResolver.shared.resolve(
                     Fetch.self
                 ),
                 alertHelper: AlertHelperImpl()
             )
+        )
+        _exerciseScreenVm = StateObject(
+            wrappedValue: ExerciseScreenViewModel()
         )
     }
     
@@ -36,24 +40,37 @@ public struct ExercisesListScreen: View {
                     .font(.title)
                     .fontWeight(.bold)
                 List(
-                    vm.exercises
+                    exercisesListScreenVm.exercises
                 ) { exercise in
                     ExerciseButton(
-                        exercise: exercise
+                        exercise: exercise,
+                        vm: exerciseScreenVm
                     )
                 }
                 .listStyle(
                     .plain
                 )
-            }.task {
-                await vm.fetchExercises()
             }
-            if vm.areExercisesLoading {
+            .task {
+                await exercisesListScreenVm.fetchExercises()
+            }
+            if exercisesListScreenVm.areExercisesLoading {
                 LoadingScreen()
             }
         }
+        .sheet(
+            isPresented: $exerciseScreenVm.shouldPresentExercise
+        ) {
+            exerciseScreenVm.endWorkout()
+        } content: {
+            ExerciseScreen(
+                vm: self.exerciseScreenVm
+            )
+            .presentationDetents([.medium, .large])
+            .presentationDragIndicator(.visible)
+        }
         .alert(
-            item: $vm.alert
+            item: $exercisesListScreenVm.alert
         ) { alertItem in
             Alert(
                 title: alertItem.title,

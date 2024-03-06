@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import ExerciseDomain
 
 @available(iOS 13.0, *)
 final class ExerciseScreenViewModel: ObservableObject {
@@ -19,7 +20,8 @@ final class ExerciseScreenViewModel: ObservableObject {
     @Published var workoutMinutes: Int = 0
     @Published var workoutHours: Int = 0
     
-    @Published var shouldPresentExercise: Bool = false
+    @Published var selectedExercise: Exercise = Exercise.failedExercise
+    @Published var shouldPresentExercise: Bool = false    
     
     private var timer: Timer? = nil
     

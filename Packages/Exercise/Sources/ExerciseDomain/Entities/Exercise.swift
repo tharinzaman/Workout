@@ -18,5 +18,11 @@ public struct Exercise: Decodable, Identifiable, Equatable {
     public var id: UUID {
         return UUID()
     }
+
+    public static let failedExercise = Exercise(
+        exercise: "Failed",
+        description: "Failed",
+        bodyPart: "Failed"
+    )
     
 }

@@ -15,15 +15,11 @@ import ExerciseDomain
 struct ExerciseScreen: View {
     
     @ObservedObject var vm: ExerciseScreenViewModel
-    
-    private let exercise: Exercise
-    
+        
     init(
-        vm: ExerciseScreenViewModel,
-        exercise: Exercise
+        vm: ExerciseScreenViewModel
     ) {
         self.vm = vm
-        self.exercise = exercise
     }
     
     var body: some View {
@@ -31,10 +27,12 @@ struct ExerciseScreen: View {
             alignment: .center
         ) {
             ExerciseTextView(
-                exercise: exercise
+                exercise: vm.selectedExercise
             )
             WorkoutActionButtonsView(
                 vm: vm
+            ).disabled(
+                vm.selectedExercise == Exercise.failedExercise ? true : false
             )
             TimerView(
                 vm: vm
