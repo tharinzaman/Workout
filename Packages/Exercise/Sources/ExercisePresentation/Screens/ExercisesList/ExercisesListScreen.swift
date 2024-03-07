@@ -35,29 +35,26 @@ public struct ExercisesListScreen: View {
     
     public var body: some View {
         ZStack {
-            VStack(alignment: .leading) {
-                Text("🏋️ Workouts")
-                    .padding(20)
-                    .font(.title)
-                    .fontWeight(.bold)
-                List(
-                    exercisesListScreenVm.exercises
-                ) { exercise in
-                    ExerciseButton(
-                        exercise: exercise,
-                        vm: exerciseScreenVm
+            NavigationStack {
+                    List(
+                        exercisesListScreenVm.exercises
+                    ) { exercise in
+                        ExerciseButton(
+                            exercise: exercise,
+                            vm: exerciseScreenVm
+                        )
+                    }
+                    .listStyle(
+                        .plain
                     )
-                }
-                .listStyle(
-                    .plain
-                )
-            }
-            .task {
-                await exercisesListScreenVm.fetchExercises()
+                    .navigationTitle("🏋️ Workouts")
             }
             if exercisesListScreenVm.areExercisesLoading {
                 LoadingScreen()
             }
+        }
+        .task {
+            await exercisesListScreenVm.fetchExercises()
         }
         .sheet(
             isPresented: $exerciseScreenVm.shouldPresentExercise

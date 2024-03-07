@@ -23,7 +23,7 @@ public struct HistoryScreen: View {
                     RecordCell(record: record)
                 }
             }
-            .navigationTitle("Workouts")
+            .navigationTitle("Records 🕦")
             .overlay {
                 if records.isEmpty {
                     ContentUnavailableView {

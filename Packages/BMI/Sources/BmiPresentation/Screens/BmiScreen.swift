@@ -36,18 +36,22 @@ public struct BmiScreen: View {
     }
     
     public var body: some View {
-        VStack(
-            spacing: 20
-        ) {
-            BmiCalculatorView(
-                vm: vm
-            ).frame(height: 400)
-            CalculateButton(
-                vm: vm
-            )
-            BmiResultView(
-                vm: vm
-            )
+        NavigationStack {
+            VStack(
+                spacing: 20
+            ) {
+                BmiCalculatorView(
+                    vm: vm
+                ).frame(height: 400)
+                CalculateButton(
+                    vm: vm
+                )
+                BmiResultView(
+                    vm: vm
+                )
+            }
+            .navigationTitle("🧍‍♂️ BMI")
+            .navigationBarTitleDisplayMode(.large)
         }.alert(
             item: $vm.alert
         ) { alert in
