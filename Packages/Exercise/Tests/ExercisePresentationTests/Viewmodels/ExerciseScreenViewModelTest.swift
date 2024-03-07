@@ -6,15 +6,18 @@
 //
 
 import XCTest
+import SwiftUI
 @testable import ExercisePresentation
 
-@available(iOS 13.0, *)
+@available(iOS 17.0, *)
 final class ExerciseScreenViewModelTest: XCTestCase {
+    
+    @Environment(\.modelContext) var context
     
     private var vm: ExerciseScreenViewModel!
     
     override func setUp() {
-        vm = ExerciseScreenViewModel()
+        vm = ExerciseScreenViewModel(modelContext: context)
     }
     
     override func tearDown() {

@@ -14,7 +14,7 @@ import SwiftData
     *
 )
 final class ExerciseScreenViewModel: ObservableObject {
-    
+        
     @Published var workoutStarted: Bool = false
     @Published var workoutRunning: Bool = false
     @Published var workoutPaused: Bool = false

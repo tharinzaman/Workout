@@ -19,6 +19,8 @@
 		E1718F632B9A26BA00D061DC /* WorkoutTabViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1718F622B9A26BA00D061DC /* WorkoutTabViewViewModel.swift */; };
 		E1718F662B9A29E500D061DC /* NotificationsData in Frameworks */ = {isa = PBXBuildFile; productRef = E1718F652B9A29E500D061DC /* NotificationsData */; };
 		E1718F682B9A29E500D061DC /* NotificationsDomain in Frameworks */ = {isa = PBXBuildFile; productRef = E1718F672B9A29E500D061DC /* NotificationsDomain */; };
+		E1718F6B2B9A2B2200D061DC /* WorkoutTabViewViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1718F6A2B9A2B2200D061DC /* WorkoutTabViewViewModelTest.swift */; };
+		E1718F6D2B9A2BDF00D061DC /* NotificationsDomain in Frameworks */ = {isa = PBXBuildFile; productRef = E1718F6C2B9A2BDF00D061DC /* NotificationsDomain */; };
 		E19C4C362B979EE90078A19C /* WorkoutTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19C4C352B979EE90078A19C /* WorkoutTabView.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,9 +50,10 @@
 		E15990A02B8A279E00D54091 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E15990C92B8BA00200D54091 /* WorkoutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutApp.swift; sourceTree = "<group>"; };
 		E1718F582B99F79800D061DC /* Workout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Workout.app; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/Workout.app"; sourceTree = "<absolute>"; };
-		E1718F592B99F79800D061DC /* WorkoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WorkoutTests.xctest; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/WorkoutTests.xctest"; sourceTree = "<absolute>"; };
-		E1718F5A2B99F79800D061DC /* WorkoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WorkoutUITests.xctest; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/WorkoutUITests.xctest"; sourceTree = "<absolute>"; };
 		E1718F622B9A26BA00D061DC /* WorkoutTabViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTabViewViewModel.swift; sourceTree = "<group>"; };
+		E1718F692B9A2B2200D061DC /* WorkoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WorkoutTests.xctest; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/WorkoutTests.xctest"; sourceTree = "<absolute>"; };
+		E1718F6A2B9A2B2200D061DC /* WorkoutTabViewViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTabViewViewModelTest.swift; sourceTree = "<group>"; };
+		E1718F6F2B9A2C5F00D061DC /* WorkoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WorkoutUITests.xctest; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/WorkoutUITests.xctest"; sourceTree = "<absolute>"; };
 		E19C4C352B979EE90078A19C /* WorkoutTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1718F6D2B9A2BDF00D061DC /* NotificationsDomain in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +135,7 @@
 		E15990A92B8A279F00D54091 /* WorkoutTests */ = {
 			isa = PBXGroup;
 			children = (
+				E1718F6A2B9A2B2200D061DC /* WorkoutTabViewViewModelTest.swift */,
 			);
 			path = WorkoutTests;
 			sourceTree = "<group>";
@@ -202,8 +207,11 @@
 				E15990A82B8A279F00D54091 /* PBXTargetDependency */,
 			);
 			name = WorkoutTests;
+			packageProductDependencies = (
+				E1718F6C2B9A2BDF00D061DC /* NotificationsDomain */,
+			);
 			productName = WorkoutTests;
-			productReference = E1718F592B99F79800D061DC /* WorkoutTests.xctest */;
+			productReference = E1718F692B9A2B2200D061DC /* WorkoutTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		E15990AF2B8A279F00D54091 /* WorkoutUITests */ = {
@@ -221,7 +229,7 @@
 			);
 			name = WorkoutUITests;
 			productName = WorkoutUITests;
-			productReference = E1718F5A2B99F79800D061DC /* WorkoutUITests.xctest */;
+			productReference = E1718F6F2B9A2C5F00D061DC /* WorkoutUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -244,6 +252,7 @@
 					};
 					E15990AF2B8A279F00D54091 = {
 						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1520;
 						TestTargetID = E15990932B8A279900D54091;
 					};
 				};
@@ -314,6 +323,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1718F6B2B9A2B2200D061DC /* WorkoutTabViewViewModelTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,6 +574,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5MW8948NCL;
@@ -572,6 +583,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tharin.WorkoutUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Workout;
@@ -582,6 +594,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5MW8948NCL;
@@ -682,6 +695,10 @@
 			productName = NotificationsData;
 		};
 		E1718F672B9A29E500D061DC /* NotificationsDomain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NotificationsDomain;
+		};
+		E1718F6C2B9A2BDF00D061DC /* NotificationsDomain */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NotificationsDomain;
 		};
