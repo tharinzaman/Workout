@@ -8,8 +8,11 @@
 import SwiftUI
 import ExercisePresentation
 import BmiPresentation
+import NotificationsDomain
 
 struct WorkoutTabView: View {
+    
+    private let 
     
     @Environment(\.modelContext) var context
     
@@ -36,6 +39,8 @@ struct WorkoutTabView: View {
                         systemImage: "clock.arrow.circlepath"
                     )
                 }
+        }.onAppear {
+            
         }
     }
 }
