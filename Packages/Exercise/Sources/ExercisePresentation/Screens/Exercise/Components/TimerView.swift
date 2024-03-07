@@ -8,7 +8,7 @@
 import SwiftUI
 
 @available(
-    iOS 14.0.0,
+    iOS 17.0.0,
     *
 )
 struct TimerView: View {
@@ -31,7 +31,7 @@ struct TimerView: View {
                     .green
                 )
             Text(
-                "\(vm.workoutHours.durationToString()):\(vm.workoutMinutes.durationToString()):\(vm.workoutSeconds.durationToString())"
+                vm.workoutDurationString
             )
             .font(
                 .title3

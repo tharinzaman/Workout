@@ -9,11 +9,11 @@ import SwiftUI
 import ExerciseDomain
 
 @available(
-    iOS 15.0,
+    iOS 17.0,
     *
 )
 struct ExerciseScreen: View {
-    
+        
     @ObservedObject var vm: ExerciseScreenViewModel
         
     init(

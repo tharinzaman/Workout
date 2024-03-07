@@ -12,16 +12,16 @@ import SwiftData
 @Model
 public class Record {
     
-    public var workoutName: String
+    public var exerciseName: String
     public var timestamp: Date
-    public var duration: Int
+    public var duration: String
     
     public init(
-        workoutName: String,
+        exerciseName: String,
         timestamp: Date,
-        duration: Int
+        duration: String
     ) {
-        self.workoutName = workoutName
+        self.exerciseName = exerciseName
         self.timestamp = timestamp
         self.duration = duration
     }

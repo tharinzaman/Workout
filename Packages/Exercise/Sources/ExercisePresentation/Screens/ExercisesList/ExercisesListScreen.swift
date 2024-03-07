@@ -8,9 +8,10 @@
 import SwiftUI
 import NetworkingData
 import NetworkingDomain
+import SwiftData
 
 @available(
-    iOS 16.0.0,
+    iOS 17.0.0,
     *
 )
 public struct ExercisesListScreen: View {
@@ -18,7 +19,7 @@ public struct ExercisesListScreen: View {
     @StateObject var exercisesListScreenVm: ExercisesListScreenViewModel
     @StateObject var exerciseScreenVm: ExerciseScreenViewModel
     
-    public init() {
+    public init(modelContext: ModelContext) {
         _exercisesListScreenVm = StateObject(
             wrappedValue: ExercisesListScreenViewModel(
                 fetch: NetworkingResolver.shared.resolve(
@@ -28,7 +29,7 @@ public struct ExercisesListScreen: View {
             )
         )
         _exerciseScreenVm = StateObject(
-            wrappedValue: ExerciseScreenViewModel()
+            wrappedValue: ExerciseScreenViewModel(modelContext: modelContext)
         )
     }
     

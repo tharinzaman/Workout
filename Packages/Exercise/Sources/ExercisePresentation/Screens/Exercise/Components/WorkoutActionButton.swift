@@ -8,7 +8,7 @@
 import SwiftUI
 
 @available(
-    iOS 14.0.0,
+    iOS 17.0.0,
     *
 )
 fileprivate struct WorkoutActionButton: View {
@@ -41,7 +41,7 @@ fileprivate struct WorkoutActionButton: View {
     }
 }
 
-@available(iOS 14.0, *)
+@available(iOS 17.0, *)
 struct WorkoutActionButtonsView: View {
     
     @ObservedObject var vm: ExerciseScreenViewModel

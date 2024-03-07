@@ -7,21 +7,25 @@
 
 import SwiftUI
 import SwiftData
+import ExerciseDomain
 
-struct HistoryScreen: View {
+@available(iOS 17, *)
+public struct HistoryScreen: View {
     
-    var workouts: [WorkoutRecord] = []
+    @Query(sort:\Record.timestamp) var records: [Record]
     
-    var body: some View {
+    public init() {}
+        
+    public var body: some View {
         NavigationStack {
             List {
-                ForEach(workouts) { workout in
-                    Text(workout.workoutName)
+                ForEach(records) { record in
+                    RecordCell(record: record)
                 }
             }
             .navigationTitle("Workouts")
             .overlay {
-                if workouts.isEmpty {
+                if records.isEmpty {
                     ContentUnavailableView {
                         Label(
                             "No Recorded Workouts",
@@ -38,35 +42,26 @@ struct HistoryScreen: View {
     }
 }
 
-struct WorkoutCell: View {
+@available(iOS 17, *)
+struct RecordCell: View {
     
-    let record: WorkoutRecord
+    let record: Record
     
     var body: some View {
-        HStack {
+        HStack(alignment: .center) {
             Text(
-                record.timestamp,
-                format: .dateTime
-                    .month(
-                        .abbreviated
-                    ).day(
-                        .twoDigits
-                    ).year()
-                    .hour(
-                        .twoDigits(amPM: .abbreviated)
-                    ).minute(
-                        .twoDigits
-                    ).second(
-                        .twoDigits
-                    )
+                record.timestamp.formatted(date: .numeric, time: .standard)
             )
-            .frame(width: 70, alignment: .leading)
-            Text(record.workoutName)
-            Text(String(record.duration)) // Need a method in viewmodel to convert to readable time, like we do in our other viewmodel
+            .frame(width: 100, alignment: .leading)
+            Text(
+                record.exerciseName
+                    .capitalized
+            )
+            .frame(width: 100, alignment: .center)
+            Text(
+                record.duration
+            )
+            .frame(width: 100, alignment: .trailing)
         }
     }
-}
-
-#Preview {
-    HistoryScreen()
 }

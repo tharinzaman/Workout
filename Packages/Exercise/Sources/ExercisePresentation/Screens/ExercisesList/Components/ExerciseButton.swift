@@ -9,7 +9,7 @@ import SwiftUI
 import ExerciseDomain
 
 @available(
-    iOS 16.0.0,
+    iOS 17.0.0,
     *
 )
 struct ExerciseButton: View {

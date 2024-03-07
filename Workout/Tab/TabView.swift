@@ -10,9 +10,12 @@ import ExercisePresentation
 import BmiPresentation
 
 struct WorkoutTabView: View {
+    
+    @Environment(\.modelContext) var context
+    
     var body: some View {
         TabView {
-            ExercisesListScreen()
+            ExercisesListScreen(modelContext: context)
                 .tabItem {
                     Label(
                         "Exercise",
@@ -24,6 +27,13 @@ struct WorkoutTabView: View {
                     Label(
                         "BMI",
                         systemImage: "figure"
+                    )
+                }
+            HistoryScreen()
+                .tabItem {
+                    Label(
+                        "History",
+                        systemImage: "clock.arrow.circlepath"
                     )
                 }
         }
