@@ -9,22 +9,37 @@ import SwiftUI
 import ExercisePresentation
 import BmiPresentation
 import NotificationsDomain
+import NotificationsData
 
 struct WorkoutTabView: View {
     
-    private let 
+    @StateObject var vm: WorkoutTabViewViewModel
+        
+    @Environment(
+        \.modelContext
+    ) var context
     
-    @Environment(\.modelContext) var context
+    init() {
+        _vm = StateObject(
+            wrappedValue: WorkoutTabViewViewModel(
+                registerNotification: NotificationsDataResolver.shared.resolve(
+                    RegisterNotification.self
+                )
+            )
+        )
+    }
     
     var body: some View {
         TabView {
-            ExercisesListScreen(modelContext: context)
-                .tabItem {
-                    Label(
-                        "Exercise",
-                        systemImage: "dumbbell.fill"
-                    )
-                }
+            ExercisesListScreen(
+                modelContext: context
+            )
+            .tabItem {
+                Label(
+                    "Exercise",
+                    systemImage: "dumbbell.fill"
+                )
+            }
             BmiScreen()
                 .tabItem {
                     Label(
@@ -40,11 +55,7 @@ struct WorkoutTabView: View {
                     )
                 }
         }.onAppear {
-            
+            vm.registerNotificationForWorkout()
         }
     }
-}
-
-#Preview {
-    WorkoutTabView()
 }

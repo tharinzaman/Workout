@@ -20,8 +20,6 @@ struct WorkoutApp: App {
 
     var body: some Scene {
         WindowGroup {
-//            WelcomeScreen()
-//            TestView()
             WorkoutTabView()
         }
         .modelContainer(container)

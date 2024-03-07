@@ -16,8 +16,10 @@
 		E159909E2B8A279E00D54091 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E159909D2B8A279E00D54091 /* Assets.xcassets */; };
 		E15990A12B8A279E00D54091 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E15990A02B8A279E00D54091 /* Preview Assets.xcassets */; };
 		E15990CA2B8BA00200D54091 /* WorkoutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15990C92B8BA00200D54091 /* WorkoutApp.swift */; };
-		E162BE1D2B8FA2DA00170E63 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E162BE1C2B8FA2DA00170E63 /* TestView.swift */; };
-		E19C4C362B979EE90078A19C /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19C4C352B979EE90078A19C /* TabView.swift */; };
+		E1718F632B9A26BA00D061DC /* WorkoutTabViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1718F622B9A26BA00D061DC /* WorkoutTabViewViewModel.swift */; };
+		E1718F662B9A29E500D061DC /* NotificationsData in Frameworks */ = {isa = PBXBuildFile; productRef = E1718F652B9A29E500D061DC /* NotificationsData */; };
+		E1718F682B9A29E500D061DC /* NotificationsDomain in Frameworks */ = {isa = PBXBuildFile; productRef = E1718F672B9A29E500D061DC /* NotificationsDomain */; };
+		E19C4C362B979EE90078A19C /* WorkoutTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19C4C352B979EE90078A19C /* WorkoutTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,11 +47,11 @@
 		E159909D2B8A279E00D54091 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E15990A02B8A279E00D54091 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E15990C92B8BA00200D54091 /* WorkoutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutApp.swift; sourceTree = "<group>"; };
-		E162BE1C2B8FA2DA00170E63 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		E1718F582B99F79800D061DC /* Workout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Workout.app; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/Workout.app"; sourceTree = "<absolute>"; };
 		E1718F592B99F79800D061DC /* WorkoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WorkoutTests.xctest; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/WorkoutTests.xctest"; sourceTree = "<absolute>"; };
 		E1718F5A2B99F79800D061DC /* WorkoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WorkoutUITests.xctest; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/WorkoutUITests.xctest"; sourceTree = "<absolute>"; };
-		E19C4C352B979EE90078A19C /* TabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		E1718F622B9A26BA00D061DC /* WorkoutTabViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTabViewViewModel.swift; sourceTree = "<group>"; };
+		E19C4C352B979EE90078A19C /* WorkoutTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,8 @@
 				E15242242B91F42B00AF6E3E /* ExercisePresentation in Frameworks */,
 				E12AA5152B90A44300EFD62C /* BmiData in Frameworks */,
 				E15242202B91F42B00AF6E3E /* ExerciseData in Frameworks */,
+				E1718F682B9A29E500D061DC /* NotificationsDomain in Frameworks */,
+				E1718F662B9A29E500D061DC /* NotificationsData in Frameworks */,
 				E12AA5172B90A44300EFD62C /* BmiDomain in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,18 +105,17 @@
 				E15990962B8A279900D54091 /* Workout */,
 				E15990A92B8A279F00D54091 /* WorkoutTests */,
 				E15990B32B8A279F00D54091 /* WorkoutUITests */,
+				E1718F642B9A29E500D061DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		E15990962B8A279900D54091 /* Workout */ = {
 			isa = PBXGroup;
 			children = (
-				E1718F5D2B99FA8700D061DC /* History */,
-				E162BE1C2B8FA2DA00170E63 /* TestView.swift */,
 				E15990C92B8BA00200D54091 /* WorkoutApp.swift */,
 				E159909D2B8A279E00D54091 /* Assets.xcassets */,
 				E159909F2B8A279E00D54091 /* Preview Content */,
-				E19C4C342B979EC70078A19C /* Tab */,
+				E1718F612B9A268800D061DC /* Views */,
 			);
 			path = Workout;
 			sourceTree = "<group>";
@@ -139,19 +142,20 @@
 			path = WorkoutUITests;
 			sourceTree = "<group>";
 		};
-		E1718F5D2B99FA8700D061DC /* History */ = {
+		E1718F612B9A268800D061DC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E19C4C352B979EE90078A19C /* WorkoutTabView.swift */,
+				E1718F622B9A26BA00D061DC /* WorkoutTabViewViewModel.swift */,
 			);
-			path = History;
+			path = Views;
 			sourceTree = "<group>";
 		};
-		E19C4C342B979EC70078A19C /* Tab */ = {
+		E1718F642B9A29E500D061DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E19C4C352B979EE90078A19C /* TabView.swift */,
 			);
-			path = Tab;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +181,8 @@
 				E152421F2B91F42B00AF6E3E /* ExerciseData */,
 				E15242212B91F42B00AF6E3E /* ExerciseDomain */,
 				E15242232B91F42B00AF6E3E /* ExercisePresentation */,
+				E1718F652B9A29E500D061DC /* NotificationsData */,
+				E1718F672B9A29E500D061DC /* NotificationsDomain */,
 			);
 			productName = Workout;
 			productReference = E1718F582B99F79800D061DC /* Workout.app */;
@@ -254,6 +260,7 @@
 			packageReferences = (
 				E12AA5132B90A44300EFD62C /* XCLocalSwiftPackageReference "Packages/BMI" */,
 				E152421E2B91F42B00AF6E3E /* XCLocalSwiftPackageReference "Packages/Exercise" */,
+				E1718F602B9A25FC00D061DC /* XCLocalSwiftPackageReference "Packages/Notifications" */,
 			);
 			productRefGroup = E159908B2B8A279900D54091;
 			projectDirPath = "";
@@ -297,8 +304,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E19C4C362B979EE90078A19C /* TabView.swift in Sources */,
-				E162BE1D2B8FA2DA00170E63 /* TestView.swift in Sources */,
+				E1718F632B9A26BA00D061DC /* WorkoutTabViewViewModel.swift in Sources */,
+				E19C4C362B979EE90078A19C /* WorkoutTabView.swift in Sources */,
 				E15990CA2B8BA00200D54091 /* WorkoutApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -639,6 +646,10 @@
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/Exercise;
 		};
+		E1718F602B9A25FC00D061DC /* XCLocalSwiftPackageReference "Packages/Notifications" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/Notifications;
+		};
 /* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -665,6 +676,14 @@
 		E15242232B91F42B00AF6E3E /* ExercisePresentation */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ExercisePresentation;
+		};
+		E1718F652B9A29E500D061DC /* NotificationsData */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NotificationsData;
+		};
+		E1718F672B9A29E500D061DC /* NotificationsDomain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NotificationsDomain;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
