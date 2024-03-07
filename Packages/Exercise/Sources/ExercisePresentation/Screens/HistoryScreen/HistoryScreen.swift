@@ -41,27 +41,3 @@ public struct HistoryScreen: View {
         }
     }
 }
-
-@available(iOS 17, *)
-struct RecordCell: View {
-    
-    let record: Record
-    
-    var body: some View {
-        HStack(alignment: .center) {
-            Text(
-                record.timestamp.formatted(date: .numeric, time: .standard)
-            )
-            .frame(width: 100, alignment: .leading)
-            Text(
-                record.exerciseName
-                    .capitalized
-            )
-            .frame(width: 100, alignment: .center)
-            Text(
-                record.duration
-            )
-            .frame(width: 100, alignment: .trailing)
-        }
-    }
-}
