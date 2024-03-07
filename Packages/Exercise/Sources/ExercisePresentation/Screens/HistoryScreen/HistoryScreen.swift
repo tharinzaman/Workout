@@ -12,7 +12,8 @@ import ExerciseDomain
 @available(iOS 17, *)
 public struct HistoryScreen: View {
     
-    @Query(sort:\Record.timestamp) var records: [Record]
+    @Environment(\.modelContext) var context
+    @Query(sort:\Record.timestamp, order: .reverse) var records: [Record]
     
     public init() {}
         
@@ -21,6 +22,11 @@ public struct HistoryScreen: View {
             List {
                 ForEach(records) { record in
                     RecordCell(record: record)
+                }
+                .onDelete { indexSet in
+                    for index in indexSet {
+                        context.delete(records[index])
+                    }
                 }
             }
             .navigationTitle("Records 🕦")

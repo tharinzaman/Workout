@@ -16,7 +16,9 @@ struct RecordCell: View {
     var body: some View {
         HStack(alignment: .center, spacing: 10) {
             Text(
-                record.timestamp.formatted(date: .numeric, time: .standard)
+                record.timestamp
+                    .formatted(date: .numeric, time: .standard)
+                    .replacingOccurrences(of: ",", with: "")
             )
             .frame(width: 100, alignment: .leading)
             Spacer()
