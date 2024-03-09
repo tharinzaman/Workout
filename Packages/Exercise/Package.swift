@@ -8,10 +8,6 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "ExerciseData",
-            targets: ["ExerciseData"]
-        ),
-        .library(
             name: "ExerciseDomain",
             targets: ["ExerciseDomain"]
         ),
@@ -22,6 +18,9 @@ let package = Package(
     ],
     dependencies: [
         .package(
+            path: "../Packages/Core"
+        ),
+        .package(
             path: "../Packages/Networking"
         )
     ],
@@ -29,30 +28,16 @@ let package = Package(
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "ExerciseData",
-            dependencies: [
-                "ExerciseDomain",
-                .product(
-                    name: "NetworkingDomain",
-                    package: "Networking"
-                ),
-                .product(
-                    name: "NetworkingData",
-                    package: "Networking"
-                )
-            ]
-        ),
-        .testTarget(
-            name: "ExerciseDataTests",
-            dependencies: ["ExerciseData"]
-        ),
-        .target(
             name: "ExerciseDomain"
         ),
         .target(
             name: "ExercisePresentation",
             dependencies: [
                 "ExerciseDomain",
+                .product(
+                    name: "Alerts",
+                    package: "Core"
+                ),
                 .product(
                     name: "NetworkingDomain",
                     package: "Networking"

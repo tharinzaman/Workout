@@ -30,7 +30,7 @@ public struct BmiScreen: View {
                 getImperialBmi: BmiResolver.shared.resolve(
                     GetImperialBmi.self
                 ),
-                alertHelper: AlertHelperImpl()
+                alertHelper: BmiAlertHelperImpl() // TODO: Use resolver
             )
         )
     }

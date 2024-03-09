@@ -7,6 +7,7 @@
 
 import XCTest
 import BmiDomain
+import Alerts
 @testable import BmiPresentation
 
 @available(
@@ -18,7 +19,7 @@ final class AlertImplTest: XCTestCase {
     private var alertHelper: AlertHelper!
     
     override func setUp() {
-        alertHelper = AlertHelperImpl()
+        alertHelper = BmiAlertHelperImpl()
     }
     
     override func tearDown() {
@@ -27,9 +28,9 @@ final class AlertImplTest: XCTestCase {
     
     func test_invalidBmiError_success() {
         // ASSIGN
-        let expectedResult = AlertItem.unableToComplete
+        let expectedResult = BmiAlertItem.unableToComplete
         // ACT
-        let result = alertHelper.errorToBmiErrorAlert(
+        let result = alertHelper.errorToAlert(
             error: BmiError.invalidBmiPassed
         )
         // ASSERT
@@ -41,9 +42,9 @@ final class AlertImplTest: XCTestCase {
     
     func test_invalidWeightError_success() {
         // ASSIGN
-        let expectedResult = AlertItem.invalidWeight
+        let expectedResult = BmiAlertItem.invalidWeight
         // ACT
-        let result = alertHelper.errorToBmiErrorAlert(
+        let result = alertHelper.errorToAlert(
             error: BmiError.invalidWeightPassed
         )
         // ASSERT
@@ -55,9 +56,9 @@ final class AlertImplTest: XCTestCase {
     
     func test_invalidHeightError_success() {
         // ASSIGN
-        let expectedResult = AlertItem.invalidHeight
+        let expectedResult = BmiAlertItem.invalidHeight
         // ACT
-        let result = alertHelper.errorToBmiErrorAlert(
+        let result = alertHelper.errorToAlert(
             error: BmiError.invalidHeightPassed
         )
         // ASSERT
@@ -69,9 +70,9 @@ final class AlertImplTest: XCTestCase {
     
     func test_otherError_success() {
         // ASSIGN
-        let expectedResult = AlertItem.unableToComplete
+        let expectedResult = BmiAlertItem.unableToComplete
         // ACT
-        let result = alertHelper.errorToBmiErrorAlert(
+        let result = alertHelper.errorToAlert(
             error: URLError(.badURL)
         )
         // ASSERT

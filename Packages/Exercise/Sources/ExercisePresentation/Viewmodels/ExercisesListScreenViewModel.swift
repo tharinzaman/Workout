@@ -8,6 +8,7 @@
 import Foundation
 import NetworkingDomain
 import ExerciseDomain
+import Alerts
 
 @available(
     iOS 13.0,
@@ -43,13 +44,13 @@ final class ExercisesListScreenViewModel: ObservableObject {
                 )
                 areExercisesLoading = false
             } catch {
-                self.alert = alertHelper.errorToWorkoutErrorAlert(
+                self.alert = alertHelper.errorToAlert(
                     error: error
                 )
                 areExercisesLoading = false
             }
         } else {
-            self.alert = AlertItem.unableToFetchExercises
+            self.alert = ExerciseAlertItem.unableToFetchExercises
             areExercisesLoading = false
         }
     }

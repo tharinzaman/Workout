@@ -27,10 +27,11 @@ class BmiCalculatorImplTest: XCTestCase {
         let expectedResult = 24.0
         // ACT
         let result = try calculator.calculateMetricBmi(
-            height: 1.53,
+            height: 153,
             weight: 57
         )
         // ASSERT
+        print(result)
         XCTAssertEqual(
             result,
             expectedResult
@@ -42,7 +43,7 @@ class BmiCalculatorImplTest: XCTestCase {
         // ACT
         do {
             let _ = try calculator.calculateMetricBmi(
-                height: 1.53,
+                height: 153,
                 weight: -12.0
             )
         } catch {
@@ -65,7 +66,7 @@ class BmiCalculatorImplTest: XCTestCase {
         // ACT
         do {
             let _ = try calculator.calculateMetricBmi(
-                height: -2.42,
+                height: -242,
                 weight: 57
             )
         } catch {

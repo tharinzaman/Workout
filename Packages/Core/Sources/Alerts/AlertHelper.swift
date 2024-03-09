@@ -10,10 +10,8 @@ import Foundation
 @available(iOS 13.0, *)
 public protocol AlertHelper {
     
-    func errorToAlert<T:Alertable>(
+    func errorToAlert(
         error: Error
-    ) -> T
+    ) -> AlertModel
     
 }
-
-public protocol Alertable {}

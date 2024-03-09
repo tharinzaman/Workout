@@ -26,7 +26,7 @@ final class ExercisesListScreenViewModelTest: XCTestCase {
         XCTAssertFalse(vm.exercises.isEmpty)
         XCTAssertNil(vm.alert)
         XCTAssertTrue(fetch.executeCalled)
-        XCTAssertTrue(helper.errorToBmiAlertCalled)
+        XCTAssertFalse(helper.errorToAlertCalled)
     }
     
     func test_fetchExercises_errorThrown() async {
@@ -41,9 +41,9 @@ final class ExercisesListScreenViewModelTest: XCTestCase {
         await vm.fetchExercises()
         // ASSERT
         XCTAssertTrue(vm.exercises.isEmpty)
-        XCTAssertEqual(vm.alert?.message, AlertItem.badResponse.message)
+        XCTAssertEqual(vm.alert?.message, ExerciseAlertItem.badResponse.message)
         XCTAssertTrue(fetch.executeCalled)
-        XCTAssertTrue(helper.errorToBmiAlertCalled)
+        XCTAssertTrue(helper.errorToAlertCalled)
     }
     
     func test_fetchExercises_fetchUseCaseNil() async {
@@ -57,7 +57,7 @@ final class ExercisesListScreenViewModelTest: XCTestCase {
         await vm.fetchExercises()
         // ASSERT
         XCTAssertTrue(vm.exercises.isEmpty)
-        XCTAssertEqual(vm.alert?.message, AlertItem.unableToFetchExercises.message)
+        XCTAssertEqual(vm.alert?.message, ExerciseAlertItem.unableToFetchExercises.message)
     }
     
 }

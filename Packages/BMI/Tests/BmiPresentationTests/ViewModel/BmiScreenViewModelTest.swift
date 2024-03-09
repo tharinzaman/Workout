@@ -7,6 +7,7 @@
 
 import XCTest
 import BmiDomain
+import Alerts
 @testable import BmiPresentation
 
 @available(
@@ -76,7 +77,7 @@ final class BmiScreenViewModelTest: XCTestCase {
         // ASSERT
         XCTAssertEqual(
             vm.alert?.message,
-            AlertItem.invalidHeight.message
+            BmiAlertItem.invalidHeight.message
         )
         XCTAssertNil(
             vm.bmi
@@ -99,7 +100,7 @@ final class BmiScreenViewModelTest: XCTestCase {
         // ASSERT
         XCTAssertEqual(
             vm.alert?.message,
-            AlertItem.unableToComplete.message
+            BmiAlertItem.unableToComplete.message
         )
         XCTAssertNil(
             vm.bmi
@@ -141,7 +142,7 @@ final class BmiScreenViewModelTest: XCTestCase {
         // ASSERT
         XCTAssertEqual(
             vm.alert?.message,
-            AlertItem.invalidHeight.message
+            BmiAlertItem.invalidHeight.message
         )
         XCTAssertNil(
             vm.bmi
@@ -165,7 +166,7 @@ final class BmiScreenViewModelTest: XCTestCase {
         )
         XCTAssertEqual(
             vm.alert?.message,
-            AlertItem.invalidHeight.message
+            BmiAlertItem.invalidHeight.message
         )
     }
     
@@ -183,7 +184,7 @@ final class BmiScreenViewModelTest: XCTestCase {
         )
         XCTAssertEqual(
             vm.alert?.message,
-            AlertItem.invalidHeight.message
+            BmiAlertItem.invalidHeight.message
         )
     }
     
@@ -201,7 +202,7 @@ final class BmiScreenViewModelTest: XCTestCase {
         )
         XCTAssertEqual(
             vm.alert?.message,
-            AlertItem.invalidHeight.message
+            BmiAlertItem.invalidHeight.message
         )
     }
     
@@ -218,7 +219,7 @@ final class BmiScreenViewModelTest: XCTestCase {
         // ASSERT
         XCTAssertEqual(
             vm.alert?.message,
-            AlertItem.unableToComplete.message
+            BmiAlertItem.unableToComplete.message
         )
         XCTAssertNil(
             vm.bmi
@@ -245,7 +246,7 @@ final class BmiScreenViewModelTest: XCTestCase {
         )
         XCTAssertEqual(
             vm.alert?.message,
-            AlertItem.unableToComplete.message
+            BmiAlertItem.unableToComplete.message
         )
         XCTAssertNil(
             vm.bmiCategory
@@ -269,7 +270,7 @@ final class BmiScreenViewModelTest: XCTestCase {
         )
         XCTAssertEqual(
             vm.alert?.message,
-            AlertItem.unableToComplete.message
+            BmiAlertItem.unableToComplete.message
         )
         XCTAssertNil(
             vm.bmiCategory

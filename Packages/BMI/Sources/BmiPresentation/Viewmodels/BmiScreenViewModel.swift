@@ -9,6 +9,7 @@ import Foundation
 import BmiDomain
 import BmiData
 import SwiftUI
+import Alerts
 
 @available(
     iOS 13.0,
@@ -56,12 +57,12 @@ final class BmiScreenViewModel: ObservableObject {
                     bmi: bmi
                 )
             } catch {
-                self.alert = alertHelper.errorToBmiErrorAlert(
+                self.alert = alertHelper.errorToAlert(
                     error: error
                 )
             }
         } else {
-            self.alert = AlertItem.unableToComplete
+            self.alert = BmiAlertItem.unableToComplete
         }
     }
     
@@ -69,11 +70,11 @@ final class BmiScreenViewModel: ObservableObject {
         if let getImperialBmi {
             do {
                 guard let inches = Int(self.inches) else {
-                    self.alert = AlertItem.invalidHeight
+                    self.alert = BmiAlertItem.invalidHeight
                     return
                 }
                 guard inches >= 0 && inches <= 12 else {
-                    self.alert = AlertItem.invalidHeight
+                    self.alert = BmiAlertItem.invalidHeight
                     return
                 }
                 let bmi = try getImperialBmi.execute(
@@ -88,12 +89,12 @@ final class BmiScreenViewModel: ObservableObject {
                     bmi: bmi
                 )
             } catch {
-                self.alert = alertHelper.errorToBmiErrorAlert(
+                self.alert = alertHelper.errorToAlert(
                     error: error
                 )
             }
         } else {
-            self.alert = AlertItem.unableToComplete
+            self.alert = BmiAlertItem.unableToComplete
         }
         
     }
@@ -113,12 +114,12 @@ final class BmiScreenViewModel: ObservableObject {
                     bmi: bmi
                 )
             } catch {
-                self.alert = alertHelper.errorToBmiErrorAlert(
+                self.alert = alertHelper.errorToAlert(
                     error: error
                 )
             }
         } else {
-            self.alert = AlertItem.unableToComplete
+            self.alert = BmiAlertItem.unableToComplete
         }
     }
     

@@ -27,17 +27,18 @@ public struct ExercisesListScreen: View {
          */
         #if DEBUG
         let mockFetch: Fetch = ExerciseUITestingHelper.networkingSuccess ? MockFetchSuccess() : MockFetchInvalidResponse()
+        let alertHelper = ExerciseAlertHelperImpl() // TODO: Use resolver
         _exercisesListScreenVm = StateObject(
             wrappedValue: ExerciseUITestingHelper.isUITest ?
             ExercisesListScreenViewModel(
                 fetch: mockFetch,
-                alertHelper: AlertHelperImpl()
+                alertHelper: alertHelper
             ) :
             ExercisesListScreenViewModel(
                 fetch: NetworkingResolver.shared.resolve(
                     Fetch.self
                 ),
-                alertHelper: AlertHelperImpl()
+                alertHelper: alertHelper
                 )
         )
         #else
@@ -46,7 +47,7 @@ public struct ExercisesListScreen: View {
                 fetch: NetworkingResolver.shared.resolve(
                     Fetch.self
                 ),
-                alertHelper: AlertHelperImpl()
+                alertHelper: alertHelper
             )
         )
         #endif

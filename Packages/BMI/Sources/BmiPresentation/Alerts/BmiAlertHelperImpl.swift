@@ -12,20 +12,15 @@ import Alerts
 @available(iOS 13.0, *)
 struct BmiAlertHelperImpl: AlertHelper {
     
-    func errorToAlert(error: Error) -> Alerts.AlertModel {
-        <#code#>
-    }
-    
-    
-    func errorToBmiErrorAlert(error: Error) -> AlertModel {
+    func errorToAlert(error: Error) -> AlertModel {
         if let bmiError = error as? BmiError {
             return switch bmiError {
-            case .invalidBmiPassed: AlertItem.unableToComplete
-            case .invalidHeightPassed: AlertItem.invalidHeight
-            case .invalidWeightPassed: AlertItem.invalidWeight
+            case .invalidBmiPassed: BmiAlertItem.unableToComplete
+            case .invalidHeightPassed: BmiAlertItem.invalidHeight
+            case .invalidWeightPassed: BmiAlertItem.invalidWeight
             }
         } else {
-            return AlertItem.unableToComplete
+            return BmiAlertItem.unableToComplete
         }
     }
     

@@ -28,7 +28,7 @@ final class ExerciseTabSuccessUITest: XCTestCase {
         XCTAssertTrue(exerciseList.exists)
     }
     
-    func test_doBenchPresses() {
+    func test_doBenchPressExercise() {
         
     }
     

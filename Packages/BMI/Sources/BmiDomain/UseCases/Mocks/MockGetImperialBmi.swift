@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import BmiDomain
 
 public final class MockGetImperialBmiSuccess: GetImperialBmi {
     

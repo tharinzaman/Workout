@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import NotificationsDomain
 
 public final class MockRegisterNotificationSuccess: RegisterNotification {
     

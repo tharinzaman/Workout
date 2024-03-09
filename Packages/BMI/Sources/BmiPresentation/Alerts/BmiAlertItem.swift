@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import Alerts
 
 @available(iOS 13.0, *)
-public struct AlertItem {
+public struct BmiAlertItem {
     
     public static let invalidWeight = AlertModel(
         title: "Invalid weight",

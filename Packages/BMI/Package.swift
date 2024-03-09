@@ -24,6 +24,9 @@ let package = Package(
         .package(
             url: "https://github.com/Swinject/Swinject.git",
             from: "2.8.4"
+        ),
+        .package(
+            path: "../Packages/Core"
         )
     ],
     targets: [
@@ -45,7 +48,14 @@ let package = Package(
         ),
         .target(
             name: "BmiPresentation",
-            dependencies: ["BmiDomain", "BmiData"]
+            dependencies: [
+                "BmiDomain",
+                "BmiData",
+                .product(
+                    name: "Alerts",
+                    package: "Core"
+                )
+            ]
         ),
         .testTarget(
             name: "BmiPresentationTests",

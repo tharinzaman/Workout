@@ -8,6 +8,7 @@
 import XCTest
 import ExerciseDomain
 import NetworkingDomain
+import Alerts
 @testable import ExercisePresentation
 
 @available(
@@ -19,7 +20,7 @@ final class AlertHelperImplTest: XCTestCase {
     private var alertHelper: AlertHelper!
     
     override func setUp() {
-        alertHelper = AlertHelperImpl()
+        alertHelper = ExerciseAlertHelperImpl()
     }
     
     override func tearDown() {
@@ -28,9 +29,9 @@ final class AlertHelperImplTest: XCTestCase {
     
     func test_badURLError_success() {
         // ASSIGN
-        let expectedResult = AlertItem.badUrl
+        let expectedResult = ExerciseAlertItem.badUrl
         // ACT
-        let result = alertHelper.errorToWorkoutErrorAlert(
+        let result = alertHelper.errorToAlert(
             error: NetworkError.invalidURL
         )
         // ASSERT
@@ -42,9 +43,9 @@ final class AlertHelperImplTest: XCTestCase {
     
     func test_badResponseError_success() {
         // ASSIGN
-        let expectedResult = AlertItem.badResponse
+        let expectedResult = ExerciseAlertItem.badResponse
         // ACT
-        let result = alertHelper.errorToWorkoutErrorAlert(
+        let result = alertHelper.errorToAlert(
             error: NetworkError.invalidResponse
         )
         // ASSERT
@@ -56,9 +57,9 @@ final class AlertHelperImplTest: XCTestCase {
     
     func test_badDataError_success() {
         // ASSIGN
-        let expectedResult = AlertItem.badData
+        let expectedResult = ExerciseAlertItem.badData
         // ACT
-        let result = alertHelper.errorToWorkoutErrorAlert(
+        let result = alertHelper.errorToAlert(
             error: NetworkError.invalidData
         )
         // ASSERT
@@ -70,9 +71,9 @@ final class AlertHelperImplTest: XCTestCase {
     
     func test_otherError_success() {
         // ASSIGN
-        let expectedResult = AlertItem.unableToFetchExercises
+        let expectedResult = ExerciseAlertItem.unableToFetchExercises
         // ACT
-        let result = alertHelper.errorToWorkoutErrorAlert(
+        let result = alertHelper.errorToAlert(
             error: URLError(
                 .badURL
             )

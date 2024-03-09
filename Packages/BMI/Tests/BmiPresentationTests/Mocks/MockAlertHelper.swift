@@ -8,18 +8,19 @@
 import Foundation
 import BmiDomain
 import BmiPresentation
+import Alerts
 
 @available(iOS 13.0, *)
 final class MockAlertHelperSuccess: AlertHelper {
     
     private(set) var errorToBmiAlertCalled = false
     
-    func errorToBmiErrorAlert(error: Error) -> AlertModel {
+    func errorToAlert(error: Error) -> AlertModel {
         errorToBmiAlertCalled = true
         return if error as? BmiError == BmiError.invalidBmiPassed {
-            AlertItem.unableToComplete
+            BmiAlertItem.unableToComplete
         } else {
-            AlertItem.invalidHeight
+            BmiAlertItem.invalidHeight
         }
     }
 }
@@ -29,8 +30,8 @@ final class MockAlertHelperFailure: AlertHelper {
     
     private(set) var errorToBmiAlertCalled = false
     
-    func errorToBmiErrorAlert(error: Error) -> AlertModel {
+    func errorToAlert(error: Error) -> AlertModel {
         errorToBmiAlertCalled = true
-        return AlertItem.unableToComplete
+        return BmiAlertItem.unableToComplete
     }
 }
