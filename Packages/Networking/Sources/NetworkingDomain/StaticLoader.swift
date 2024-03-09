@@ -9,40 +9,40 @@ import Foundation
 
 public struct StaticLoader {
     
-    public static func loadJSONFromFileReturnData(
-        file: String
-    ) -> Data? {
-        guard let path = Bundle.main.path(
+    public static func loadJSONFromFileReturnData() -> Data? {
+        guard let url = Bundle.module.url(
             forResource: "MockNetworkResponse",
-            ofType: "json"
+            withExtension: "json",
+            subdirectory: "TestingUtils"
         ) else {
             fatalError("Invalid path")
         }
-        guard let data = FileManager.default.contents(
-            atPath: path
-        ) else {
-            fatalError("No data for path")
+        var data: Data? = nil
+        do {
+            data = try Data(contentsOf: url)
+        } catch {
+            fatalError("No data due to: \(error.localizedDescription)")
         }
         return data
     }
     
-    public static func loadJSONFromFileReturnDecodedData<T:Decodable>(
-        file: String
-    ) -> [T] {
-        
-        guard let path = Bundle.main.path(
-            forResource: file,
-            ofType: "json"
+    public static func loadJSONFromFileReturnDecodedData<T:Decodable>() -> [T] {
+        guard let url = Bundle.module.url(
+            forResource: "MockNetworkResponse",
+            withExtension: "json",
+            subdirectory: "TestingUtils"
         ) else {
             fatalError("Invalid path")
         }
-        
-        guard let data = FileManager.default.contents(
-            atPath: path
-        ) else {
-            fatalError("No data for path")
+        var data: Data? = nil
+        do {
+            data = try Data(contentsOf: url)
+        } catch {
+            fatalError("No data due to: \(error.localizedDescription)")
         }
-        
+        guard let data else {
+            fatalError("Data is nil")
+        }
         do {
             return try JSONDecoder().decode(
                 [T].self,

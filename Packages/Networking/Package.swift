@@ -34,7 +34,8 @@ let package = Package(
             dependencies: ["NetworkingData"]
         ),
         .target(
-            name: "NetworkingDomain"
+            name: "NetworkingDomain",
+            resources: [.copy("TestingUtils")]
         )
     ]
 )

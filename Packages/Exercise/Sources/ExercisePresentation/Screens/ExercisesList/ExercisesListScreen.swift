@@ -20,6 +20,27 @@ public struct ExercisesListScreen: View {
     @StateObject var exerciseScreenVm: ExerciseScreenViewModel
     
     public init(modelContext: ModelContext) {
+        /**
+         If we are in debug mode and performing a UI test, then we will pass a mocked fetch use case. Depending on if the networkingSuccess argument is true or false,  we pass successful or failing mock.
+         If we are in debug mode but NOT performing a UI test, then the fetch use case will be whatever was passed in the initializer.
+         If we are not in debug mode, then the locationHelper and client will also be whatever was passed in the initializer.
+         */
+        #if DEBUG
+        let mockFetch: Fetch = ExerciseUITestingHelper.networkingSuccess ? MockFetchSuccess() : MockFetchInvalidResponse()
+        _exercisesListScreenVm = StateObject(
+            wrappedValue: ExerciseUITestingHelper.isUITest ?
+            ExercisesListScreenViewModel(
+                fetch: mockFetch,
+                alertHelper: AlertHelperImpl()
+            ) :
+            ExercisesListScreenViewModel(
+                fetch: NetworkingResolver.shared.resolve(
+                    Fetch.self
+                ),
+                alertHelper: AlertHelperImpl()
+                )
+        )
+        #else
         _exercisesListScreenVm = StateObject(
             wrappedValue: ExercisesListScreenViewModel(
                 fetch: NetworkingResolver.shared.resolve(
@@ -28,6 +49,7 @@ public struct ExercisesListScreen: View {
                 alertHelper: AlertHelperImpl()
             )
         )
+        #endif
         _exerciseScreenVm = StateObject(
             wrappedValue: ExerciseScreenViewModel(modelContext: modelContext)
         )
@@ -48,6 +70,7 @@ public struct ExercisesListScreen: View {
                         .plain
                     )
                     .navigationTitle("🏋️ Workouts")
+                    .accessibilityIdentifier("exercise-list")
             }
             if exercisesListScreenVm.areExercisesLoading {
                 LoadingScreen()

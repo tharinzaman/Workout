@@ -24,7 +24,8 @@ final class ExerciseTabSuccessUITest: XCTestCase {
     }
     
     func test_loadAllExercises() {
-        
+        let exerciseList = app.collectionViews["exercise-list"]
+        XCTAssertTrue(exerciseList.exists)
     }
     
     func test_doBenchPresses() {

@@ -16,7 +16,7 @@ public final class MockFetchSuccess: Fetch {
     
     public func execute<T : Decodable>(from url: String, session: URLSession) async throws -> [T] {
         executeCalled = true
-        return StaticLoader.loadJSONFromFileReturnDecodedData(file: "MockNetworkResponse")
+        return StaticLoader.loadJSONFromFileReturnDecodedData()
     }
     
 }

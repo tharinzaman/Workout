@@ -21,6 +21,12 @@
 		E1718F682B9A29E500D061DC /* NotificationsDomain in Frameworks */ = {isa = PBXBuildFile; productRef = E1718F672B9A29E500D061DC /* NotificationsDomain */; };
 		E1718F6B2B9A2B2200D061DC /* WorkoutTabViewViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1718F6A2B9A2B2200D061DC /* WorkoutTabViewViewModelTest.swift */; };
 		E1718F6D2B9A2BDF00D061DC /* NotificationsDomain in Frameworks */ = {isa = PBXBuildFile; productRef = E1718F6C2B9A2BDF00D061DC /* NotificationsDomain */; };
+		E172C6662B9C78A1006AB50B /* BmiPresentation in Frameworks */ = {isa = PBXBuildFile; productRef = E172C6652B9C78A1006AB50B /* BmiPresentation */; };
+		E172C6682B9C78A1006AB50B /* ExercisePresentation in Frameworks */ = {isa = PBXBuildFile; productRef = E172C6672B9C78A1006AB50B /* ExercisePresentation */; };
+		E172C66B2B9C7944006AB50B /* ExerciseTabUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E172C66A2B9C7944006AB50B /* ExerciseTabUITest.swift */; };
+		E172C66D2B9C7959006AB50B /* BmiTabUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E172C66C2B9C7959006AB50B /* BmiTabUITest.swift */; };
+		E172C66F2B9C7972006AB50B /* HistoryTabUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E172C66E2B9C7972006AB50B /* HistoryTabUITest.swift */; };
+		E172C6752B9C8A1F006AB50B /* Networking in Resources */ = {isa = PBXBuildFile; fileRef = E12F928E2B8C85D8007F8ED8 /* Networking */; };
 		E19C4C362B979EE90078A19C /* WorkoutTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19C4C352B979EE90078A19C /* WorkoutTabView.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,11 +55,14 @@
 		E159909D2B8A279E00D54091 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E15990A02B8A279E00D54091 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E15990C92B8BA00200D54091 /* WorkoutApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutApp.swift; sourceTree = "<group>"; };
-		E1718F582B99F79800D061DC /* Workout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Workout.app; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/Workout.app"; sourceTree = "<absolute>"; };
 		E1718F622B9A26BA00D061DC /* WorkoutTabViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTabViewViewModel.swift; sourceTree = "<group>"; };
-		E1718F692B9A2B2200D061DC /* WorkoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WorkoutTests.xctest; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/WorkoutTests.xctest"; sourceTree = "<absolute>"; };
 		E1718F6A2B9A2B2200D061DC /* WorkoutTabViewViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTabViewViewModelTest.swift; sourceTree = "<group>"; };
-		E1718F6F2B9A2C5F00D061DC /* WorkoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WorkoutUITests.xctest; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/WorkoutUITests.xctest"; sourceTree = "<absolute>"; };
+		E172C6622B9C73C5006AB50B /* Workout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Workout.app; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/Workout.app"; sourceTree = "<absolute>"; };
+		E172C6632B9C73C5006AB50B /* WorkoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WorkoutTests.xctest; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/WorkoutTests.xctest"; sourceTree = "<absolute>"; };
+		E172C6692B9C7943006AB50B /* WorkoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WorkoutUITests.xctest; path = "/Users/tharin/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/WorkoutUITests.xctest"; sourceTree = "<absolute>"; };
+		E172C66A2B9C7944006AB50B /* ExerciseTabUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTabUITest.swift; sourceTree = "<group>"; };
+		E172C66C2B9C7959006AB50B /* BmiTabUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BmiTabUITest.swift; sourceTree = "<group>"; };
+		E172C66E2B9C7972006AB50B /* HistoryTabUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTabUITest.swift; sourceTree = "<group>"; };
 		E19C4C352B979EE90078A19C /* WorkoutTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +94,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E172C6682B9C78A1006AB50B /* ExercisePresentation in Frameworks */,
+				E172C6662B9C78A1006AB50B /* BmiPresentation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,8 +129,8 @@
 			children = (
 				E15990C92B8BA00200D54091 /* WorkoutApp.swift */,
 				E159909D2B8A279E00D54091 /* Assets.xcassets */,
+				E1718F612B9A268800D061DC /* Presentation */,
 				E159909F2B8A279E00D54091 /* Preview Content */,
-				E1718F612B9A268800D061DC /* Views */,
 			);
 			path = Workout;
 			sourceTree = "<group>";
@@ -143,17 +154,18 @@
 		E15990B32B8A279F00D54091 /* WorkoutUITests */ = {
 			isa = PBXGroup;
 			children = (
+				E172C6702B9C809C006AB50B /* Tests */,
 			);
 			path = WorkoutUITests;
 			sourceTree = "<group>";
 		};
-		E1718F612B9A268800D061DC /* Views */ = {
+		E1718F612B9A268800D061DC /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
 				E19C4C352B979EE90078A19C /* WorkoutTabView.swift */,
 				E1718F622B9A26BA00D061DC /* WorkoutTabViewViewModel.swift */,
 			);
-			path = Views;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		E1718F642B9A29E500D061DC /* Frameworks */ = {
@@ -161,6 +173,16 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E172C6702B9C809C006AB50B /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E172C66A2B9C7944006AB50B /* ExerciseTabUITest.swift */,
+				E172C66C2B9C7959006AB50B /* BmiTabUITest.swift */,
+				E172C66E2B9C7972006AB50B /* HistoryTabUITest.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,7 +212,7 @@
 				E1718F672B9A29E500D061DC /* NotificationsDomain */,
 			);
 			productName = Workout;
-			productReference = E1718F582B99F79800D061DC /* Workout.app */;
+			productReference = E172C6622B9C73C5006AB50B /* Workout.app */;
 			productType = "com.apple.product-type.application";
 		};
 		E15990A52B8A279F00D54091 /* WorkoutTests */ = {
@@ -211,7 +233,7 @@
 				E1718F6C2B9A2BDF00D061DC /* NotificationsDomain */,
 			);
 			productName = WorkoutTests;
-			productReference = E1718F692B9A2B2200D061DC /* WorkoutTests.xctest */;
+			productReference = E172C6632B9C73C5006AB50B /* WorkoutTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		E15990AF2B8A279F00D54091 /* WorkoutUITests */ = {
@@ -228,8 +250,12 @@
 				E15990B22B8A279F00D54091 /* PBXTargetDependency */,
 			);
 			name = WorkoutUITests;
+			packageProductDependencies = (
+				E172C6652B9C78A1006AB50B /* BmiPresentation */,
+				E172C6672B9C78A1006AB50B /* ExercisePresentation */,
+			);
 			productName = WorkoutUITests;
-			productReference = E1718F6F2B9A2C5F00D061DC /* WorkoutUITests.xctest */;
+			productReference = E172C6692B9C7943006AB50B /* WorkoutUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -287,6 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E172C6752B9C8A1F006AB50B /* Networking in Resources */,
 				E15990A12B8A279E00D54091 /* Preview Assets.xcassets in Resources */,
 				E159909E2B8A279E00D54091 /* Assets.xcassets in Resources */,
 			);
@@ -331,6 +358,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E172C66D2B9C7959006AB50B /* BmiTabUITest.swift in Sources */,
+				E172C66F2B9C7972006AB50B /* HistoryTabUITest.swift in Sources */,
+				E172C66B2B9C7944006AB50B /* ExerciseTabUITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,6 +731,14 @@
 		E1718F6C2B9A2BDF00D061DC /* NotificationsDomain */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = NotificationsDomain;
+		};
+		E172C6652B9C78A1006AB50B /* BmiPresentation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BmiPresentation;
+		};
+		E172C6672B9C78A1006AB50B /* ExercisePresentation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ExercisePresentation;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -15,7 +15,7 @@ final class MockNetworkClientSuccess : NetworkClient {
     
     func fetch<T>(from url: String, session: URLSession) async throws -> [T] where T : Decodable {
         fetchCalled = true
-        return StaticLoader.loadJSONFromFileReturnDecodedData(file: "MockNetworkResponse")
+        return StaticLoader.loadJSONFromFileReturnDecodedData()
     }
 }
 

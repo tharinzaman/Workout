@@ -41,9 +41,7 @@ class NetworkClientImplTest: XCTestCase {
     
     func test_makeANetworkRequest_success() async throws {
         // ASSIGN
-        let data = StaticLoader.loadJSONFromFileReturnData(
-            file: "MockNetworkResponse"
-        )
+        let data = StaticLoader.loadJSONFromFileReturnData()
         MockURLSession.loadingHandler = {
             let response = HTTPURLResponse(
                 url: self.jsonUrl,
@@ -56,9 +54,7 @@ class NetworkClientImplTest: XCTestCase {
                 data
             )
         }
-        let expectedResult: [NetworkingEntity] = StaticLoader.loadJSONFromFileReturnDecodedData(
-            file: "MockNetworkResponse"
-        )
+        let expectedResult: [NetworkingEntity] = StaticLoader.loadJSONFromFileReturnDecodedData()
         // ACT
         let result: [NetworkingEntity] = try await client.fetch(
             from: urlString,
@@ -72,9 +68,7 @@ class NetworkClientImplTest: XCTestCase {
     }
     
     func test_makeANetworkRequest_failure_invalidUrl() async throws {
-        let data = StaticLoader.loadJSONFromFileReturnData(
-            file: "MockNetworkResponse"
-        )
+        let data = StaticLoader.loadJSONFromFileReturnData()
         MockURLSession.loadingHandler = {
             let response = HTTPURLResponse()
             return (
