@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import Alerts
 
 @available(
     iOS 13.0,
     *
 )
-public struct AlertItem {
+public struct ExerciseAlertItem {
     
     public static let unableToFetchExercises = AlertModel(
         title: "Unable to fetch exercises.",

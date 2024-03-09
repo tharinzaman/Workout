@@ -7,9 +7,15 @@
 
 import Foundation
 import BmiDomain
+import Alerts
 
 @available(iOS 13.0, *)
-struct AlertHelperImpl: AlertHelper {
+struct BmiAlertHelperImpl: AlertHelper {
+    
+    func errorToAlert(error: Error) -> Alerts.AlertModel {
+        <#code#>
+    }
+    
     
     func errorToBmiErrorAlert(error: Error) -> AlertModel {
         if let bmiError = error as? BmiError {
