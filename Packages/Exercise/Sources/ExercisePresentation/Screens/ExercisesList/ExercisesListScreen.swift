@@ -9,6 +9,7 @@ import SwiftUI
 import NetworkingData
 import NetworkingDomain
 import SwiftData
+import Alerts
 
 @available(
     iOS 17.0.0,
@@ -20,37 +21,14 @@ public struct ExercisesListScreen: View {
     @StateObject var exerciseScreenVm: ExerciseScreenViewModel
     
     public init(modelContext: ModelContext) {
-        /**
-         If we are in debug mode and performing a UI test, then we will pass a mocked fetch use case. Depending on if the networkingSuccess argument is true or false,  we pass successful or failing mock.
-         If we are in debug mode but NOT performing a UI test, then the fetch use case will be whatever was passed in the initializer.
-         If we are not in debug mode, then the locationHelper and client will also be whatever was passed in the initializer.
-         */
-        #if DEBUG
-        let mockFetch: Fetch = ExerciseUITestingHelper.networkingSuccess ? MockFetchSuccess() : MockFetchInvalidResponse()
-        let alertHelper = ExerciseAlertHelperImpl() // TODO: Use resolver
-        _exercisesListScreenVm = StateObject(
-            wrappedValue: ExerciseUITestingHelper.isUITest ?
-            ExercisesListScreenViewModel(
-                fetch: mockFetch,
-                alertHelper: alertHelper
-            ) :
-            ExercisesListScreenViewModel(
-                fetch: NetworkingResolver.shared.resolve(
-                    Fetch.self
-                ),
-                alertHelper: alertHelper
-                )
-        )
-        #else
         _exercisesListScreenVm = StateObject(
             wrappedValue: ExercisesListScreenViewModel(
                 fetch: NetworkingResolver.shared.resolve(
                     Fetch.self
                 ),
-                alertHelper: alertHelper
+                alertHelper: PresentationResolver.shared.resolve(AlertHelper.self)
             )
         )
-        #endif
         _exerciseScreenVm = StateObject(
             wrappedValue: ExerciseScreenViewModel(modelContext: modelContext)
         )
@@ -71,7 +49,6 @@ public struct ExercisesListScreen: View {
                         .plain
                     )
                     .navigationTitle("🏋️ Workouts")
-                    .accessibilityIdentifier("exercise-list")
             }
             if exercisesListScreenVm.areExercisesLoading {
                 LoadingScreen()

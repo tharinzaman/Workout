@@ -20,7 +20,7 @@ final class BmiScreenViewModel: ObservableObject {
     private let getBmiCategory: GetBmiCategory?
     private let getMetricBmi: GetMetricBmi?
     private let getImperialBmi: GetImperialBmi?
-    private let alertHelper: AlertHelper
+    private let alertHelper: AlertHelper?
     
     @Published var alert: AlertModel? = nil
     @Published var bmi: String? = nil
@@ -35,7 +35,7 @@ final class BmiScreenViewModel: ObservableObject {
         getBmiCategory: GetBmiCategory?,
         getMetricBmi: GetMetricBmi?,
         getImperialBmi: GetImperialBmi?,
-        alertHelper: AlertHelper
+        alertHelper: AlertHelper?
     ) {
         self.getBmiCategory = getBmiCategory
         self.getMetricBmi = getMetricBmi
@@ -57,9 +57,11 @@ final class BmiScreenViewModel: ObservableObject {
                     bmi: bmi
                 )
             } catch {
-                self.alert = alertHelper.errorToAlert(
-                    error: error
-                )
+                if let alertHelper {
+                    self.alert = alertHelper.errorToAlert(
+                        error: error
+                    )
+                }
             }
         } else {
             self.alert = BmiAlertItem.unableToComplete
@@ -89,9 +91,11 @@ final class BmiScreenViewModel: ObservableObject {
                     bmi: bmi
                 )
             } catch {
-                self.alert = alertHelper.errorToAlert(
-                    error: error
-                )
+                if let alertHelper {
+                    self.alert = alertHelper.errorToAlert(
+                        error: error
+                    )
+                }
             }
         } else {
             self.alert = BmiAlertItem.unableToComplete
@@ -114,9 +118,11 @@ final class BmiScreenViewModel: ObservableObject {
                     bmi: bmi
                 )
             } catch {
-                self.alert = alertHelper.errorToAlert(
-                    error: error
-                )
+                if let alertHelper {
+                    self.alert = alertHelper.errorToAlert(
+                        error: error
+                    )
+                }
             }
         } else {
             self.alert = BmiAlertItem.unableToComplete

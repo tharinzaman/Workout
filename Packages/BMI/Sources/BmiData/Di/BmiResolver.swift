@@ -11,8 +11,7 @@ import Swinject
 
 public struct BmiResolver {
     
-    private init() {
-    }
+    private init() {}
     
     public static let shared = BmiResolver()
     

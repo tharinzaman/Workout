@@ -22,6 +22,10 @@ let package = Package(
         ),
         .package(
             path: "../Packages/Networking"
+        ),
+        .package(
+            url: "https://github.com/Swinject/Swinject.git",
+            from: "2.8.4"
         )
     ],
     targets: [
@@ -34,6 +38,7 @@ let package = Package(
             name: "ExercisePresentation",
             dependencies: [
                 "ExerciseDomain",
+                "Swinject",
                 .product(
                     name: "Alerts",
                     package: "Core"

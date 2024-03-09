@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import BmiDomain
 import BmiData
+import Alerts
 
 @available(
     iOS 17.0,
@@ -30,7 +31,9 @@ public struct BmiScreen: View {
                 getImperialBmi: BmiResolver.shared.resolve(
                     GetImperialBmi.self
                 ),
-                alertHelper: BmiAlertHelperImpl() // TODO: Use resolver
+                alertHelper: PresentationResolver.shared.resolve(
+                    AlertHelper.self
+                )
             )
         )
     }

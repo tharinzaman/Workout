@@ -17,13 +17,13 @@ import Alerts
 final class ExercisesListScreenViewModel: ObservableObject {
     
     private let fetch: Fetch?
-    private let alertHelper: AlertHelper
+    private let alertHelper: AlertHelper?
     
     private let urlString = "https://raw.githubusercontent.com/terrenjpeterson/workout-planner/master/exercises.json"
     
     init(
         fetch: Fetch?,
-        alertHelper: AlertHelper
+        alertHelper: AlertHelper?
     ) {
         self.fetch = fetch
         self.alertHelper = alertHelper
@@ -44,9 +44,11 @@ final class ExercisesListScreenViewModel: ObservableObject {
                 )
                 areExercisesLoading = false
             } catch {
-                self.alert = alertHelper.errorToAlert(
-                    error: error
-                )
+                if let alertHelper {
+                    self.alert = alertHelper.errorToAlert(
+                        error: error
+                    )
+                }
                 areExercisesLoading = false
             }
         } else {
