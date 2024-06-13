@@ -12,6 +12,8 @@ import ExerciseDomain
 @main
 struct WorkoutApp: App {
     
+    // Test comment
+    
     let container: ModelContainer = {
         let schema = Schema([Record.self])
         let container = try! ModelContainer(for: schema, configurations: [])
