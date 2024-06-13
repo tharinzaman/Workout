@@ -36,8 +36,8 @@
 
 /* Begin PBXFileReference section */
 		9FEA175F2C1B46CD004995C3 /* Workout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workout.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9FEA17602C1B46CD004995C3 /* WorkoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9FEA17612C1B4701004995C3 /* TestPackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = TestPackage; path = ../../../../Desktop/TestPackage; sourceTree = "<group>"; };
+		9FEA17602C1B46CD004995C3 /* WorkoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = WorkoutTests.xctest; path = "/Users/tharinzaman/iOS Projects/SwiftUI/Workout/build/Debug-iphoneos/Workout.app/PlugIns/WorkoutTests.xctest"; sourceTree = "<absolute>"; };
+		9FEA17642C1B48FE004995C3 /* TestPackage */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TestPackage; sourceTree = "<group>"; };
 		E12F928D2B8C85D8007F8ED8 /* BMI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = BMI; sourceTree = "<group>"; };
 		E12F928E2B8C85D8007F8ED8 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Networking; sourceTree = "<group>"; };
 		E12F928F2B8C85D8007F8ED8 /* Exercise */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Exercise; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 		E12F928C2B8C85D8007F8ED8 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				9FEA17612C1B4701004995C3 /* TestPackage */,
+				9FEA17642C1B48FE004995C3 /* TestPackage */,
 				E19569032B9CA14C000C4ED9 /* Core */,
 				E12F928D2B8C85D8007F8ED8 /* BMI */,
 				E12F928F2B8C85D8007F8ED8 /* Exercise */,
@@ -98,7 +98,6 @@
 				E15990A92B8A279F00D54091 /* WorkoutTests */,
 				E1718F642B9A29E500D061DC /* Frameworks */,
 				9FEA175F2C1B46CD004995C3 /* Workout.app */,
-				9FEA17602C1B46CD004995C3 /* WorkoutTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};

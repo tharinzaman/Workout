@@ -13,5 +13,5 @@ public protocol AlertHelper {
     func errorToAlert(
         error: Error
     ) -> AlertModel
-    
+        
 }
