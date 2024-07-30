@@ -7,6 +7,7 @@
 
 import Foundation
 
+// This is just for testing purposes
 public struct NetworkingEntity: Decodable, Equatable {
     
     public let exercise: String

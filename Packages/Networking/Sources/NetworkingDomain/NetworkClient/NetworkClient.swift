@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 @available(iOS 13.0.0,*)
 public protocol NetworkClient {
@@ -15,4 +16,8 @@ public protocol NetworkClient {
         session: URLSession
     ) async throws -> [T]
     
+    func fetchImages(
+        from url: String,
+        session: URLSession
+    ) async throws -> [UIImage]
 }
